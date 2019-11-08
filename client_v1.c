@@ -17,7 +17,7 @@ int main (int argc, char *argv[]) {
     FILE *file;
     int port,port2 = 5001;
     char msg[RCVSIZE];
-    char buffer_ecriture[1024];
+    char *buffer_ecriture = malloc (sizeof(char)*104857600);
 
     if(argc > 3){
         printf("Too many arguments\n");
@@ -84,23 +84,27 @@ int main (int argc, char *argv[]) {
         sendto(server_desc,(const char*)msg, strlen(msg),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse)); 
         printf("the value of sent is:%lu\n", strlen(msg));
         fini = 0;
-        num_seq = 0;
+        
         while(fini == 0){
             
             n = recvfrom(server_desc, (char *)msg, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &adresse,&len);
             msg[n]='\0';
-            printf("Reception octet no : %d\n",num_seq);
+           
             if(strcmp(msg,"FIN")==0){
+                printf("On a recu FIN\n");
                 fini = 1;
-            	if((file=fopen(nom_fichier,"w"))==NULL){
+                sendto(server_desc,"ACK", strlen("ACK"),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
+            	
+                if((file=fopen("blabla.jpg","w")) == NULL){
 		            //if the file does not exist print the string
 		            printf("Cannot open the file...");
 		            exit(1);
 	            }
-	            //write the values on the file
-	            fwrite(buffer_ecriture,sizeof(char),10000000,file);
+	            //write the values on the file  
+	            fwrite(buffer_ecriture,sizeof(char),strlen(buffer_ecriture),file);
 	            //close the file
-	            fclose(file);    
+	            fclose(file);
+                free(buffer_ecriture);
             }else{
                 strcpy(ack_s,"ACK_");
                 memcpy(num_seq_s,msg,6);
@@ -113,6 +117,7 @@ int main (int argc, char *argv[]) {
                 sendto(server_desc,(const char*)msg, strlen(msg),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
             }
         }
+        
 
 
     }

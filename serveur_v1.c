@@ -159,7 +159,7 @@ int main (int argc, char *argv[]) {
         
         for(int num_seq=0;num_seq < nb_morceaux;num_seq++){
             printf("Numero de sequence %d\n",num_seq);
-            memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*num_seq), RCVSIZE);
+            memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*num_seq), RCVSIZE-6);
             
             strcpy(num_seq_tot, "000000");
             snprintf((char *) num_seq_s, 10 , "%d", num_seq ); 
@@ -187,11 +187,11 @@ int main (int argc, char *argv[]) {
         }
         
         // ToDo retransmission si pas ack
-        sendto(server_desc_udp2,(char*)"FIN", strlen("FIN"),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
+        sendto(server_desc_udp2,"FIN", strlen("FIN"),MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
         printf("WAITING for message final ack\n");
-        n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &adresse,&len); 
+        n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len); 
         buffer[n] = '\0';
-
+        printf("Final ack done.");
     }        
     
     return 0;
