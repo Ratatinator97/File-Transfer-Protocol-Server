@@ -91,16 +91,20 @@ int main (int argc, char *argv[]) {
             msg[n]='\0';
            
             if(strcmp(msg,"FIN")==0){
+                
                 printf("On a recu FIN\n");
                 fini = 1;
                 sendto(server_desc,"ACK", strlen("ACK"),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
             	
                 if((file=fopen("blabla.jpg","w")) == NULL){
 		            //if the file does not exist print the string
-		            printf("Cannot open the file...");
+		            printf("Cannot open the file...\n");
 		            exit(1);
 	            }
-	            //write the values on the file  
+	            //write the values on the file 
+                printf("L'echange est fini !\n");
+                printf("Le buffer d'ecriture contient : %s\n",buffer_ecriture);
+                printf("Le buffer contient %d bytes\n",strlen(buffer_ecriture));
 	            fwrite(buffer_ecriture,sizeof(char),strlen(buffer_ecriture),file);
 	            //close the file
 	            fclose(file);
