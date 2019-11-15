@@ -74,51 +74,78 @@ int main (int argc, char *argv[]) {
     char num_seq_s[7];
     int num_seq;
     char ack_s[11];
+    int length = 0;
+    int iteration;
     while(1){
 
         fgets(msg, RCVSIZE, stdin);
+        fflush(stdin);
         strcpy(msg,strtok(msg, "\n"));
         printf("Le msg lu est : %s...\n",msg);
         strcpy(nom_fichier,msg);
-        printf("Le nom du fichier est : %s...\n",nom_fichier);
+        printf("Le nom du fichier est : %s\n",nom_fichier);
         sendto(server_desc,(const char*)msg, strlen(msg),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse)); 
         printf("the value of sent is:%lu\n", strlen(msg));
         fini = 0;
-        
+        iteration = 0;
         while(fini == 0){
             
             n = recvfrom(server_desc, (char *)msg, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &adresse,&len);
             msg[n]='\0';
-           
+            printf("Le nom du fichier est : %s\n",nom_fichier);
             if(strcmp(msg,"FIN")==0){
                 
                 printf("On a recu FIN\n");
                 fini = 1;
                 sendto(server_desc,"ACK", strlen("ACK"),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
             	
-                if((file=fopen("blabla.jpg","w")) == NULL){
-		            //if the file does not exist print the string
+                printf("Le nom du fichier est %s\n",nom_fichier);
+                if((file=fopen("texte2.txt","w")) == NULL){
+		            
 		            printf("Cannot open the file...\n");
 		            exit(1);
 	            }
 	            //write the values on the file 
                 printf("L'echange est fini !\n");
-                printf("Le buffer d'ecriture contient : %s\n",buffer_ecriture);
-                printf("Le buffer contient %d bytes\n",strlen(buffer_ecriture));
-	            fwrite(buffer_ecriture,sizeof(char),strlen(buffer_ecriture),file);
-	            //close the file
+                
+                printf("On sauvegarde au total %d bytes dans le fichier \n",iteration*(RCVSIZE-6)+length);
+	            fwrite(buffer_ecriture,sizeof(char),iteration*(RCVSIZE-6)+length,file); 
 	            fclose(file);
                 free(buffer_ecriture);
             }else{
+                
                 strcpy(ack_s,"ACK_");
-                memcpy(num_seq_s,msg,6);
+                printf("Contenu de msg : %s\n",msg);
+                
+                for(int u=0;u<6;u++){
+                    num_seq_s[u]=msg[u];
+                }
+                num_seq_s[6]='\0';
+               
+                printf("num_seq_s contient : %s\n",num_seq_s);
                 num_seq = atoi(num_seq_s);
-                memcpy(buffer_ecriture+(RCVSIZE-6)*num_seq,msg,RCVSIZE-6);
-
+                printf("On copie le msg a l'emplacement no %d du buffer\n",((RCVSIZE-6)*num_seq));
+                
+                length = RCVSIZE-6;
+                
+                // -------------------------
+                for(int v=0;v<502;v++){
+                    if(msg[v] == EOF){
+                        printf("EOF trouvé en %d\n",v);
+                        length = v;
+                    }
+                }
+                memcpy(buffer_ecriture+((RCVSIZE-6)*num_seq),msg+6,length); //Todo Probleme sur fin de fichier
+                
+                printf("ack_s contient : %s\n",ack_s);
+                printf("num_seq_s contient : %s\n",num_seq_s);
                 strcat(ack_s,num_seq_s);
-                strcpy(msg, ack_s);   
+                printf("ack_s contient : %s\n",ack_s);
+                strcpy(msg, ack_s);  
+                printf("Le buffer msg contient : %s\n",msg); 
                 printf("Acquitement : %s , no : %d\n",msg,num_seq);             
                 sendto(server_desc,(const char*)msg, strlen(msg),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
+                iteration++;
             }
         }
         
