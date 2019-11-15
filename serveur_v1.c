@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <time.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -10,8 +11,6 @@
 #include <arpa/inet.h>
 
 #define RCVSIZE 508
-
-
 
 int main (int argc, char *argv[]) {
 
@@ -84,17 +83,20 @@ int main (int argc, char *argv[]) {
         // En multi client il faut creer le thread avant de envoyer le synack
         // faire lecture fichier -> envoi -> réecriture
         // 
-
+        clock_t before = clock();
         sendto(server_desc_udp, (char *)buffer, strlen(buffer),MSG_CONFIRM, (const struct sockaddr *) &cliaddr, len);
         printf("Waiting for ACK...\n");
         n = recvfrom(server_desc_udp, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
+        clock_t difference = clock() - before;
+        int RTT = difference * 1000 / CLOCKS_PER_SEC;
         buffer[n] = '\0';
         if(strcmp(buffer,"ACK")==0){
         printf("ACK received, connection\n");
-
+        printf("The RTT is equal to %d\n",RTT);
+        printf("Difference is equal to %d\n",difference);
         
         // Handshake reussi !
-
+        
         }else{
         printf("Bad ack");
         exit(0);
@@ -201,10 +203,8 @@ int main (int argc, char *argv[]) {
                     ack = 1;
                     printf("Acquitement de %d est reussi\n",num_seq);
                 }
-                
             }
         }
-        
         // ToDo retransmission si pas ack
         sendto(server_desc_udp2,"FIN", strlen("FIN"),MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
         printf("WAITING for message final ack\n");
@@ -212,6 +212,6 @@ int main (int argc, char *argv[]) {
         buffer[n] = '\0';
         printf("Final ack done.");
     }        
-    
+
     return 0;
 }
