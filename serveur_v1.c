@@ -11,6 +11,8 @@
 
 #define RCVSIZE 508
 
+
+
 int main (int argc, char *argv[]) {
 
     struct sockaddr_in adresse, cliaddr, adresse2; 
@@ -47,7 +49,7 @@ int main (int argc, char *argv[]) {
         perror("Cannot create udp socket\n");
         return -1;
     }
-    
+
     adresse.sin_family= AF_INET;
     adresse.sin_port= htons(port_udp);    
     adresse.sin_addr.s_addr= INADDR_ANY;
@@ -55,6 +57,7 @@ int main (int argc, char *argv[]) {
     adresse2.sin_family= AF_INET;
     adresse2.sin_port= htons(port_udp2);    
     adresse2.sin_addr.s_addr= INADDR_ANY;
+    
 
     if (bind(server_desc_udp, (struct sockaddr*) &adresse, sizeof(adresse))<0) {
         perror("Bind failed\n");
@@ -102,6 +105,7 @@ int main (int argc, char *argv[]) {
     }
 
     int server_desc_udp2 = socket(AF_INET, SOCK_DGRAM, 0);
+
     if (bind(server_desc_udp2, (struct sockaddr*) &adresse2, sizeof(adresse2))<0) {
         perror("Bind failed\n");
         close(server_desc_udp);
@@ -144,7 +148,7 @@ int main (int argc, char *argv[]) {
         printf("Le fichier lu a une taille de %d octets\n",length);
 
         int nb_morceaux;
-
+        int reste = length % (RCVSIZE-6);
         if((length % (RCVSIZE-6)) != 0){
             nb_morceaux = (length/(RCVSIZE-6))+1;
         } else {
@@ -156,9 +160,19 @@ int main (int argc, char *argv[]) {
         int ack = 0;
         char num_seq_tot[7];
         char num_seq_s[7];
+        int dernier_morceau;
+        int numbytes;
         
         for(int num_seq=0;num_seq < nb_morceaux;num_seq++){
+            
+            if(num_seq == nb_morceaux-1){
+                dernier_morceau = 1;
+            }
+            else {
+                dernier_morceau = 0;
+            }
             printf("Numero de sequence %d\n",num_seq);
+            
             memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*num_seq), RCVSIZE-6);
             
             strcpy(num_seq_tot, "000000");
@@ -170,9 +184,14 @@ int main (int argc, char *argv[]) {
             
             ack = 0;
             while(ack == 0){
+                if(dernier_morceau == 1){
+                    numbytes = reste;
+                }
+                else {
+                    numbytes = RCVSIZE;
+                }
                 
-                
-                sendto(server_desc_udp2,(const char*)buffer, strlen(buffer),MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
+                sendto(server_desc_udp2,(const char*)buffer, numbytes ,MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
                 
                 n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len); 
                 buffer[n] = '\0';  

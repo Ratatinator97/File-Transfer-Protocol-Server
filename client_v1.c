@@ -100,7 +100,7 @@ int main (int argc, char *argv[]) {
                 sendto(server_desc,"ACK", strlen("ACK"),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
             	
                 printf("Le nom du fichier est %s\n",nom_fichier);
-                if((file=fopen("texte2.txt","w")) == NULL){
+                if((file=fopen(nom_fichier,"w")) == NULL){
 		            
 		            printf("Cannot open the file...\n");
 		            exit(1);
@@ -129,12 +129,7 @@ int main (int argc, char *argv[]) {
                 length = RCVSIZE-6;
                 
                 // -------------------------
-                for(int v=0;v<502;v++){
-                    if(msg[v] == EOF){
-                        printf("EOF trouvé en %d\n",v);
-                        length = v;
-                    }
-                }
+                
                 memcpy(buffer_ecriture+((RCVSIZE-6)*num_seq),msg+6,length); //Todo Probleme sur fin de fichier
                 
                 printf("ack_s contient : %s\n",ack_s);
