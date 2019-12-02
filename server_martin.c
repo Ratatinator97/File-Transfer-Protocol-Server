@@ -167,17 +167,23 @@ int main (int argc, char *argv[]) {
         int dernier_morceau;
         int numbytes;
         char buffer_copie[508];
-        for(int num_seq=0;num_seq < nb_morceaux;num_seq++){
+        for(int num_seq=1;num_seq <= nb_morceaux;num_seq++){
 
-            if(num_seq == nb_morceaux-1){
+            if(num_seq == nb_morceaux){
                 dernier_morceau = 1;
             }
             else {
                 dernier_morceau = 0;
             }
+            if(dernier_morceau == 1){
+                numbytes = reste;
+            }
+            else {
+                numbytes = RCVSIZE-6;
+            }
             printf("Numero de sequence %d\n",num_seq);
 
-            memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*num_seq), RCVSIZE-6);
+            memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*(num_seq-1)), numbytes);
             
             strcpy(num_seq_tot, "000000");
             snprintf((char *) num_seq_s, 10 , "%d", num_seq );
@@ -193,10 +199,10 @@ int main (int argc, char *argv[]) {
                     numbytes = reste;
                 }
                 else {
-                    numbytes = RCVSIZE;
+                    numbytes = RCVSIZE-6;
                 }
                 
-                memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*num_seq), RCVSIZE-6);
+                memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*(num_seq-1)), numbytes);
                 strcpy(num_seq_tot, "000000");
                 snprintf((char *) num_seq_s, 10 , "%d", num_seq );
                 for(int i = strlen(num_seq_s);i>=0;i--){
@@ -204,7 +210,7 @@ int main (int argc, char *argv[]) {
                 }
                 memcpy(buffer,num_seq_tot, 6);
 
-                sendto(server_desc_udp2,(const char*)buffer, numbytes ,MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
+                sendto(server_desc_udp2,(const char*)buffer, numbytes+6 ,MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
 
                 n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len);
                 buffer[n] = '\0';
