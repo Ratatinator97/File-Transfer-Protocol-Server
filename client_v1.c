@@ -17,7 +17,6 @@ int main (int argc, char *argv[]) {
     FILE *file;
     int port,port2 = 5001;
     char msg[RCVSIZE];
-    char *buffer_ecriture = malloc (sizeof(char)*104857600);
 
     if(argc > 3){
         printf("Too many arguments\n");
@@ -76,8 +75,12 @@ int main (int argc, char *argv[]) {
     char ack_s[11];
     int length = 0;
     int iteration;
-    while(1){
 
+    while(1){
+        char *buffer_ecriture = malloc (sizeof(char)*104857600);
+        for(int i=0;i<104857600;i++){
+            buffer_ecriture[i]='0';
+        }
         fgets(msg, RCVSIZE, stdin);
         fflush(stdin);
         strcpy(msg,strtok(msg, "\n"));
@@ -100,7 +103,7 @@ int main (int argc, char *argv[]) {
                 sendto(server_desc,"ACK", strlen("ACK"),MSG_CONFIRM, (const struct sockaddr *) &adresse,sizeof(adresse));
             	
                 printf("Le nom du fichier est %s\n",nom_fichier);
-                if((file=fopen(nom_fichier,"w")) == NULL){
+                if((file=fopen("CV_copie.pdf","w")) == NULL){
 		            
 		            printf("Cannot open the file...\n");
 		            exit(1);
@@ -128,9 +131,8 @@ int main (int argc, char *argv[]) {
                 
                 length = RCVSIZE-6;
                 
-                // -------------------------
                 
-                memcpy(buffer_ecriture+((RCVSIZE-6)*num_seq),msg+6,length); //Todo Probleme sur fin de fichier
+                memcpy(buffer_ecriture+((RCVSIZE-6)*num_seq),msg+6,length);
                 
                 printf("ack_s contient : %s\n",ack_s);
                 printf("num_seq_s contient : %s\n",num_seq_s);

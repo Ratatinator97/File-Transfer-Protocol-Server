@@ -41,8 +41,6 @@ int main (int argc, char *argv[]) {
         printf("%d\n",port_udp);
     }
 
-    
-
     int server_desc_udp = socket(AF_INET, SOCK_DGRAM, 0);
     if(server_desc_udp < 0){
         perror("Cannot create udp socket\n");
@@ -74,7 +72,6 @@ int main (int argc, char *argv[]) {
         char port_udp2_s[6];
         strcpy(synack, "SYN-ACK");
 
-
         printf("SYN COMING\n");
         snprintf((char *) port_udp2_s, 10 , "%d", port_udp2 ); 
         strcat(synack,port_udp2_s);
@@ -96,7 +93,7 @@ int main (int argc, char *argv[]) {
         printf("Difference is equal to %d\n",difference);
         
         // Handshake reussi !
-        
+
         }else{
         printf("Bad ack");
         exit(0);
@@ -141,7 +138,7 @@ int main (int argc, char *argv[]) {
         size_t length = ftell(fichier); // read the position which is the size
         fseek(fichier, pos, SEEK_SET);
         char buffer_lecture[length];
-
+        
         if((fread(buffer_lecture,sizeof(char),length,fichier))!=length){
             printf("Something's wrong I can feel it (read)....\n");
         }
@@ -198,8 +195,9 @@ int main (int argc, char *argv[]) {
                 n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len); 
                 buffer[n] = '\0';  
 
-                
-                if(atoi(strtok(buffer,"ACK_")) == num_seq){
+                int numack = atoi(strtok(buffer,"ACK_"));
+                if( numack == num_seq){
+                    printf("Nous avons recu %d",numack);
                     ack = 1;
                     printf("Acquitement de %d est reussi\n",num_seq);
                 }
