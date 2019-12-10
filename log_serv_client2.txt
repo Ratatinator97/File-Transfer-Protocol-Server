@@ -1,0 +1,7 @@
+5005
+SYN COMING
+Waiting for ACK...
+ACK received, connection
+WAITING FOR MESSAGE
+On a recu le msg : ACK ...
+Something's wrong I can feel it (file)

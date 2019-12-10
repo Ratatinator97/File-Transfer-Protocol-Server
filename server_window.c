@@ -8,10 +8,13 @@
 #include <sys/select.h>
 #include <sys/time.h>
 #include <arpa/inet.h>
+#include <time.h>
 
 #define RCVSIZE 508
 
-int envoyer(int no_seq, int no_bytes, char buffer_input, char buffer_output, int server_socket, struct sockaddr* client_addr, socklen_t length);
+void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t length);
+
+int wait_ack(int no_seq, int no_seq_max, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length);
 
 int main (int argc, char *argv[]) {
 
@@ -25,7 +28,6 @@ int main (int argc, char *argv[]) {
     int port_udp, port_udp2= 5002;
 
     char buffer[RCVSIZE];
-
 
     if(argc > 2){
         printf("Too many arguments\n");
@@ -72,6 +74,7 @@ int main (int argc, char *argv[]) {
     buffer[n] = '\0';
 
     if(strcmp(buffer,"SYN")==0){
+        
         char synack[13];
         char port_udp2_s[6];
         strcpy(synack, "SYN-ACK");
@@ -86,19 +89,16 @@ int main (int argc, char *argv[]) {
         // faire lecture fichier -> envoi -> réecriture
         //
 
-        sendto(server_desc_udp, (char *)buffer, strlen(buffer),MSG_CONFIRM, (const struct sockaddr *) &cliaddr, len);
+        sendto(server_desc_udp, (char *)buffer, strlen(buffer),MSG_CONFIRM, (const struct sockaddr *) &cliaddr, len); 
         printf("Waiting for ACK...\n");
         n = recvfrom(server_desc_udp, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
         buffer[n] = '\0';
         if(strcmp(buffer,"ACK")==0){
-        printf("ACK received, connection\n");
-
-
+            printf("ACK received, connection\n");
         // Handshake reussi !
-
         }else{
-        printf("Bad ack");
-        exit(0);
+            printf("Bad ack");
+            exit(0);
         }
     }else{
         printf("bad SYN");
@@ -116,167 +116,138 @@ int main (int argc, char *argv[]) {
 
     FILE* fichier;
 
-    while(1) {
+    timeout.tv_sec=0;
+    timeout.tv_usec=5000;
+    setsockopt(server_desc_udp2,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
+    printf("WAITING FOR MESSAGE\n");
+
+    n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
+    buffer[n] = '\0';
+
+    printf("On a recu le msg : %s ...\n", buffer);
+    // POSER UN ACK ICI
+
+    fichier = NULL;
+
+    if((fichier=fopen(buffer,"r"))==NULL){
+
+        printf("Something's wrong I can feel it (file)\n");
+        exit(1);
+    }
+
+    size_t pos = ftell(fichier);    // Current position
+    fseek(fichier, 0, SEEK_END);    // Go to end
+    size_t length = ftell(fichier); // read the position which is the size
+    fseek(fichier, pos, SEEK_SET);
+    char buffer_lecture[length];
+
+    if((fread(buffer_lecture,sizeof(char),length,fichier))!=length){
+        printf("Something's wrong I can feel it (read)....\n");
+    }
+    fclose(fichier);
+
+    printf("Le fichier lu a une taille de %d octets\n",length);
+
+    int nb_morceaux;
+    int reste = length % (RCVSIZE-6);
+    
+    printf("Le reste est egal a %d\n",reste);
+    
+    if((length % (RCVSIZE-6)) != 0){
+        nb_morceaux = (length/(RCVSIZE-6))+1;
+    } else {
+        nb_morceaux = length/(RCVSIZE-6);
+    }
+
+    printf("Le fichier lu est decoupe en %d envois\n",nb_morceaux);
+
+    int ack = 0;
+    int num_seq=1;
+    int num_seq_ack=0;
+    char num_seq_tot[7];
+    char num_seq_s[7];
+    int dernier_morceau;
+    int taille_window=5;
+    int window[taille_window];
+    
+    clock_t t; 
+    t = clock(); 
+    
+    for(int i=0;i< taille_window;i++){
         
-        timeout.tv_sec=0;
-        timeout.tv_usec=500;
-        setsockopt(server_desc_udp2,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
-        printf("WAITING FOR MESSAGE\n");
-
-        n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
-        buffer[n] = '\0';
-
-        printf("On a recu le msg : %s ...\n", buffer);
-        // POSER UN ACK ICI
-
-        fichier = NULL;
-
-        if((fichier=fopen(buffer,"r"))==NULL){
-
-            printf("Something's wrong I can feel it (file)\n");
-            exit(1);
-        }
-
-        size_t pos = ftell(fichier);    // Current position
-        fseek(fichier, 0, SEEK_END);    // Go to end
-        size_t length = ftell(fichier); // read the position which is the size
-        fseek(fichier, pos, SEEK_SET);
-        char buffer_lecture[length];
-
-        if((fread(buffer_lecture,sizeof(char),length,fichier))!=length){
-            printf("Something's wrong I can feel it (read)....\n");
-        }
-        fclose(fichier);
-
-        printf("Le fichier lu a une taille de %d octets\n",length);
-
-        int nb_morceaux;
-        int reste = length % (RCVSIZE-6);
-        
-        printf("Le reste est egal a %d\n",reste);
-        
-        if((length % (RCVSIZE-6)) != 0){
-            nb_morceaux = (length/(RCVSIZE-6))+1;
+        if(num_seq == nb_morceaux){
+            envoyer(num_seq+i,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
         } else {
-            nb_morceaux = length/(RCVSIZE-6);
+            envoyer(num_seq+i,RCVSIZE-6,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
         }
-
-        printf("Le fichier lu est decoupe en %d envois\n",nb_morceaux);
-
-        int ack = 0;
-        char num_seq_tot[7];
-        char num_seq_s[7];
-        int dernier_morceau;
-        int numbytes;
-        char buffer_copie[508];
-        int taille_window = 4;
-        int nvlles_valeurs[100];
-
-        for(int i=0;i<=99;i++){
-            nvlles_valeurs[i]=0;
-        }
-        // REMPLIR nvlles_valeurs POUR TAILLE WINDOW
-        for(int i=0;i<taille_window;i++){
-            nvlles_valeurs[i]=i;
-        }
-
-        int valeurs[100];
-        for(int i=0;i<=99;i++){
-            valeurs[i]=0;
-        }
-
-
-        int num_seq = 1;
+        window[i]=i+1;
+    }
+   
         
-        while(!fin){
-                
-            //Lecture des nouvelles valeurs a envoyer
-            int i=0;
-            while(nvlles_valeurs[i]!=0){
-                // ENVOYER LES NUM DE SEQ ASSOCIES 
-                envoyer(nvlles_valeurs[i],numbytes,buffer,buffer_lecture,server_desc_udp2,&cliaddr,len);
-                nvlles_valeurs[i]=0;
-            }
-            n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len);
-            buffer[n] = '\0';
-            if(n != -1){
-                    
-                int numack = atoi(strtok(buffer,"ACK_"));
-                if(numack == num_seq){
-                    printf("Num de seq recu %d\n", numack);
-                    ack = 1;
-                    printf("Acquitement de %d est reussi\n",num_seq);
+    while(num_seq_ack <= nb_morceaux){
+        int n = wait_ack(num_seq_ack,num_seq,RCVSIZE-6,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,&len);
+        
+        if(n == 0){
+            
+            num_seq = num_seq_ack+1;
+            for(int i=0;i< taille_window;i++){
+                printf("---> %d\n",num_seq+i);
+                if(num_seq == nb_morceaux){
+                    envoyer(num_seq+i,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
+                } else {
+                    envoyer(num_seq+i,RCVSIZE-6,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
                 }
-            }
-            else {
+                window[i]=num_seq+i;
                 
+            }
+            num_seq += taille_window;
+        } else {
+            num_seq_ack = n;
+            
+            
+            for(int i=0; i < taille_window;i++){
+                
+                if(window[i] < num_seq_ack){
+                    
+                    window[i]=num_seq_ack+(i+1);
+                    
+                    if(window[i] > num_seq){
+                       
+                        num_seq++;
+                        if(num_seq == nb_morceaux){
+                            envoyer(num_seq+i,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
+                        } else {
+                            printf("----------------> %d\n",num_seq+i);
+                            envoyer(num_seq+i,RCVSIZE-6,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
+                        }
+                    }
+                }      
             }
             
-
-
-
-
+            //envoyer(num_seq_ack+1,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
         }
         
-        
-
-            if(num_seq == nb_morceaux){
-                dernier_morceau = 1;
-            }
-            else {
-                dernier_morceau = 0;
-            }
-
-            ack = 0;
-            while(ack == 0){
-                if(dernier_morceau == 1){
-                    numbytes = reste;
-                }
-                else {
-                    numbytes = RCVSIZE-6;
-                }
-                
-                
-
-                memcpy(buffer+6, buffer_lecture+((RCVSIZE-6)*(num_seq-1)), numbytes);
-                strcpy(num_seq_tot, "000000");
-                snprintf((char *) num_seq_s, 10 , "%d", num_seq );
-                for(int i = strlen(num_seq_s);i>=0;i--){
-                    num_seq_tot[strlen(num_seq_tot)-i]=num_seq_s[strlen(num_seq_s)-i];
-                }
-                memcpy(buffer,num_seq_tot, 6);
-
-                sendto(server_desc_udp2,(const char*)buffer, numbytes+6 ,MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
-
-                n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len);
-                buffer[n] = '\0';
-                if(n != -1){
-                    
-                    int numack = atoi(strtok(buffer,"ACK_"));
-                    if(numack == num_seq){
-                        printf("Num de seq recu %d\n", numack);
-                        ack = 1;
-                        printf("Acquitement de %d est reussi\n",num_seq);
-                    }
-                }
-
-                
-
-            }
-        }
-
-        // ToDo retransmission si pas ack
-        sendto(server_desc_udp2,"FIN", strlen("FIN"),MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
-        printf("WAITING for message final ack\n");
-        n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len);
-        buffer[n] = '\0';
-        printf("Final ack done.\n");
     }
+
+
+    // ToDo retransmission si pas ack
+    sendto(server_desc_udp2,"FIN", strlen("FIN"),MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
+    printf("WAITING for final ack\n");
+    n = recvfrom(server_desc_udp2, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len);
+    buffer[n] = '\0';
+    printf("Final ack done.\n");
+    t = clock() - t; 
+    double time_taken = (double)t/CLOCKS_PER_SEC;
+    printf("Taille: %d\n", length);
+    printf("Temps: %f\n",time_taken);
+
+    printf("DEBIT : %f\n",((float)((float)length/time_taken))/1024);
 
     return 0;
 }
 
-int envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr* client_addr, socklen_t length){
+
+void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t length){
     
     char num_seq_tot[7];
     char num_seq_s[7];
@@ -289,6 +260,29 @@ int envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, i
     }
     memcpy(buffer_output,num_seq_tot, 6);
 
-    sendto(server_socket,(const char*)buffer_output, no_bytes+6 ,MSG_CONFIRM, (const struct sockaddr *) &client_addr,length);
+    sendto(server_socket,(const char*)buffer_output, no_bytes+6 ,MSG_CONFIRM, (struct sockaddr*) client_addr,length);
+    
+    return;
 }
 
+int wait_ack(int no_seq, int no_seq_max, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length){
+    
+    int n = recvfrom(server_socket, (char *)buffer_input, RCVSIZE,MSG_WAITALL, (struct sockaddr *) client_addr,length);
+    buffer_input[n] = '\0';
+    if(n != -1){
+       
+        int numack = atoi(strtok(buffer_input,"ACK_"));
+        if(numack == no_seq){
+            return numack;
+
+        }
+        else if((numack > no_seq) && (numack <= no_seq_max)){
+            return numack;
+        }
+    }
+    else {
+        
+    }
+    
+    return 0;
+}
