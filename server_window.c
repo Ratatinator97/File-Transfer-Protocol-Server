@@ -117,7 +117,7 @@ int main (int argc, char *argv[]) {
     FILE* fichier;
 
     timeout.tv_sec=0;
-    timeout.tv_usec=5000;
+    timeout.tv_usec=500;
     setsockopt(server_desc_udp2,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
     printf("WAITING FOR MESSAGE\n");
 
@@ -167,14 +167,15 @@ int main (int argc, char *argv[]) {
     char num_seq_tot[7];
     char num_seq_s[7];
     int dernier_morceau;
-    int taille_window=5;
+    int taille_window=4;
     int window[taille_window];
     
     clock_t t; 
     t = clock(); 
     
+    printf("Initialisation\n");
     for(int i=0;i< taille_window;i++){
-        
+        printf("-> %d\n",i+1);
         if(num_seq == nb_morceaux){
             envoyer(num_seq+i,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
         } else {
@@ -182,13 +183,14 @@ int main (int argc, char *argv[]) {
         }
         window[i]=i+1;
     }
+    num_seq=taille_window;
    
         
     while(num_seq_ack <= nb_morceaux){
         int n = wait_ack(num_seq_ack,num_seq,RCVSIZE-6,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,&len);
         
         if(n == 0){
-            
+            printf("Timeout recu, envoi de la sequence entiere\n");
             num_seq = num_seq_ack+1;
             for(int i=0;i< taille_window;i++){
                 printf("---> %d\n",num_seq+i);
@@ -203,26 +205,27 @@ int main (int argc, char *argv[]) {
             num_seq += taille_window;
         } else {
             num_seq_ack = n;
-            
-            
+            printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
             for(int i=0; i < taille_window;i++){
                 
-                if(window[i] < num_seq_ack){
+                if(window[i] < (num_seq_ack+1+i)){
                     
                     window[i]=num_seq_ack+(i+1);
                     
                     if(window[i] > num_seq){
                        
-                        num_seq++;
+                        num_seq=window[i];
                         if(num_seq == nb_morceaux){
-                            envoyer(num_seq+i,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
+                            envoyer(num_seq,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
                         } else {
-                            printf("----------------> %d\n",num_seq+i);
-                            envoyer(num_seq+i,RCVSIZE-6,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
+                            printf("numseq: %d, i: %d \n",num_seq,i);
+                            printf("----------------> %d\n",num_seq);
+                            envoyer(num_seq,RCVSIZE-6,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
                         }
                     }
                 }      
             }
+            printf("2----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
             
             //envoyer(num_seq_ack+1,reste,&buffer_lecture,&buffer,server_desc_udp2,&cliaddr,len);
         }
@@ -273,15 +276,17 @@ int wait_ack(int no_seq, int no_seq_max, int no_bytes, char* buffer_input, char*
        
         int numack = atoi(strtok(buffer_input,"ACK_"));
         if(numack == no_seq){
+            printf("Ack == Numero de seq\n");
             return numack;
 
         }
         else if((numack > no_seq) && (numack <= no_seq_max)){
+            printf("Ack plus grand que le num de sequence : %d\n",numack);
             return numack;
         }
     }
     else {
-        
+        printf("Timeout\n");
     }
     
     return 0;
