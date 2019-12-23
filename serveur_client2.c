@@ -31,16 +31,16 @@ int main (int argc, char *argv[]) {
     char buffer[RCVSIZE];
 
     if(argc > 2){
-        printf("Too many arguments\n");
+        //printf("Too many arguments\n");
         exit(0);
     }
     if(argc < 2){
-        printf("Argument expected\n");
+        //printf("Argument expected\n");
         exit(0);
     }
     if(argc == 2){
         port_syn = atoi(argv[1]);
-        printf("%d\n",port_syn);
+        //printf("%d\n",port_syn);
     }
 
 
@@ -79,8 +79,8 @@ int main (int argc, char *argv[]) {
     while(getpid() == ppid){
 
 
-      printf("JE SUIS LE PERE - %d\n",getpid());
-      printf("WAITING FOR SYN\n");
+      //printf("JE SUIS LE PERE - %d\n",getpid());
+      //printf("WAITING FOR SYN\n");
       n = recvfrom(server_desc_syn, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
       buffer[n] = '\0';
 
@@ -89,24 +89,24 @@ int main (int argc, char *argv[]) {
         char synack[13];
         char port_data_s[6];
         strcpy(synack, "SYN-ACK");
-        printf("SYN COMING\n");
+        //printf("SYN COMING\n");
         snprintf((char *) port_data_s, 10 , "%d", port_data );
         strcat(synack,port_data_s);
         strcpy(buffer, synack);
 
         sendto(server_desc_syn, (char *)buffer, strlen(buffer),MSG_CONFIRM, (const struct sockaddr *) &cliaddr, len);
-        printf("Waiting for ACK...\n");
+        //printf("Waiting for ACK...\n");
         n = recvfrom(server_desc_syn, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
         buffer[n] = '\0';
         if(strcmp(buffer,"ACK")==0){
-            printf("ACK received, connection\n");
+            //printf("ACK received, connection\n");
         // Handshake reussi !
         }else{
-            printf("Bad ack");
+            //printf("Bad ack");
             exit(0);
         }
     }else{
-        printf("bad SYN");
+        //printf("bad SYN");
         exit(0);
     }
 
@@ -123,18 +123,18 @@ int main (int argc, char *argv[]) {
     close(server_desc_data);
     server_desc_data = socket(AF_INET, SOCK_DGRAM, 0);
     port_data ++;
-    printf("port du prochain: %d\n",port_data);
-    printf("\n");
+    //printf("port du prochain: %d\n",port_data);
+    //printf("\n");
     adresse2.sin_port= htons(port_data);
   }
 }
-    printf("JE SUIS LE FILS - %d DU PERE  %d\n\n",getpid(),getppid());
+    //printf("JE SUIS LE FILS - %d DU PERE  %d\n\n",getpid(),getppid());
     FILE* fichier;
 
     timeout.tv_sec=0;
     timeout.tv_usec=20000;
     setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
-    printf("Valeur du timeout initial : %f\n",timeout.tv_usec);
+    //printf("Valeur du timeout initial : %f\n",timeout.tv_usec);
     //printf("WAITING FOR MESSAGE\n");
 
     n = recvfrom(server_desc_data, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
@@ -161,7 +161,7 @@ int main (int argc, char *argv[]) {
     }
     fclose(fichier);
 
-    printf("Le fichier lu a une taille de %ld octets\n",length);
+    //printf("Le fichier lu a une taille de %ld octets\n",length);
 
     int nb_morceaux;
     int reste = length % (RCVSIZE-6);
@@ -174,11 +174,11 @@ int main (int argc, char *argv[]) {
         nb_morceaux = length/(RCVSIZE-6);
     }
 
-    printf("Le fichier lu est decoupe en %d envois\n",nb_morceaux);
+    //printf("Le fichier lu est decoupe en %d envois\n",nb_morceaux);
 
     int num_seq=1;
     int num_seq_ack=0;
-    int taille_window=32;
+    int taille_window=16;
     int window[taille_window];
     double time_rtt;
     int numseq_rtt;
@@ -205,36 +205,37 @@ int main (int argc, char *argv[]) {
     while(num_seq_ack < nb_morceaux){
         int n = wait_ack(num_seq_ack,num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len);
         
-        //Mettre aleatoire
-        //printf("Nous cherchons %d et avons recu %d\n",numseq_rtt,n);
-        //printf("Rentre dans le affichage de timer ? %d\n",(numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0));
+        
+        ////printf("Nous cherchons %d et avons recu %d\n",numseq_rtt,n);
+        ////printf("Rentre dans le affichage de timer ? %d\n",(numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0));
         if((numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0)){
             time_rtt = give_time() - time_rtt;
             
-            //printf("Time RTT = %.16f\n",time_rtt);
+            ////printf("Time RTT = %.16f\n",time_rtt);
             
             time_in_us = time_rtt*1000000;
-            //printf("La valeur du timer est de %f\n",time_in_us);
-            if(time_rtt < 1000000){
-                
+            
+            if((time_rtt < 1000000) && (time_in_us > 1000)){
+                //printf("La valeur du timer est de %f\n",time_in_us);
+                time_in_us=time_in_us+2500;
                 timeout.tv_usec=time_in_us;
                 setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
             }
             
-            //printf("La valeur du timer est de %f\n",timeout.tv_usec);
+            
             numseq_rtt=0;
         }
         if(n == 0){
-            //printf("Timeout recu, envoi de la sequence entiere\n");
+            ////printf("Timeout recu, envoi de la sequence entiere\n");
             //Si Timeout alors : Refaire le RTT
             num_seq = num_seq_ack+1;
             for(int i=0;i< taille_window;i++){
                 if(i==0){
-                    //printf("On lance le RTT calculation\n");
+                    ////printf("On lance le RTT calculation\n");
                     time_rtt = give_time();
                     numseq_rtt = num_seq+i;
                 }
-                //printf("---> %d\n",num_seq+i);
+                ////printf("---> %d\n",num_seq+i);
                 if((num_seq+i == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                     envoyer(num_seq+i,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 } else if((num_seq+i < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
@@ -246,7 +247,7 @@ int main (int argc, char *argv[]) {
             num_seq += taille_window;
         } else {
             num_seq_ack = n;
-            //printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
+            ////printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
             for(int i=0; i < taille_window;i++){
 
                 if(window[i] < (num_seq_ack+1+i)){
@@ -260,18 +261,18 @@ int main (int argc, char *argv[]) {
                             envoyer(num_seq,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         } else if((num_seq < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                             if((rand() % 10) == 1){
-                                //printf("On lance le RTT calculation\n");
+                                ////printf("On lance le RTT calculation\n");
                                 time_rtt = give_time();
                                 numseq_rtt=num_seq;
                             }
-                            //printf("numseq: %d, i: %d \n",num_seq,i);
-                            //printf("----------------> %d\n",num_seq);
+                            ////printf("numseq: %d, i: %d \n",num_seq,i);
+                            ////printf("----------------> %d\n",num_seq);
                             envoyer(num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         }
                     }
                 }
             }
-            //printf("2----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
+            ////printf("2----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
 
             //envoyer(num_seq_ack+1,reste,&buffer_lecture,&buffer,server_desc_data,&cliaddr,len);
         }
@@ -283,15 +284,15 @@ int main (int argc, char *argv[]) {
         sendto(server_desc_data,"FIN", strlen("FIN"),MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
     }
     
-    //printf("WAITING for final ack\n");
+    ////printf("WAITING for final ack\n");
     n = recvfrom(server_desc_data, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len);
     buffer[n] = '\0';
-    printf("Final ack done for %d .\n",getpid());
+    //printf("Final ack done for %d .\n",getpid());
     double time_taken = give_time() - time;
-    printf("time taken %.6lf\n",time_taken);
-    printf("Taille: %ld\n", length);
-    printf("Temps: %f\n",time_taken);
-    printf("DEBIT : %f Ko\n",((float)((float)length/time_taken))/1000);
+    //printf("time taken %.6lf\n",time_taken);
+    //printf("Taille: %ld\n", length);
+    //printf("Temps: %f\n",time_taken);
+    printf("%f\n",((float)((float)length/time_taken))/1000);
 
     return 0;
 }
