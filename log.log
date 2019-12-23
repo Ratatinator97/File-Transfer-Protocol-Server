@@ -1,0 +1,2260 @@
+5050
+JE SUIS LE PERE - 213611
+WAITING FOR SYN
+SYN COMING
+Waiting for ACK...
+ACK received, connection
+JE SUIS LE FILS - 213614 DU PERE  213611
+
+Valeur du timeout initial : 0.000000
+Le fichier lu a une taille de 817530 octets
+Le fichier lu est decoupe en 548 envois
+On lance le RTT calculation
+Ack plus grand que le num de sequence : 1
+Nous cherchons 1 et avons recu 1
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0194966793060303
+La valeur du timer est de 19496.679306
+La valeur du timer est de 19496.679306
+----------------> 5
+Ack plus grand que le num de sequence : 3
+Nous cherchons 0 et avons recu 3
+Rentre dans le affichage de timer ? 0
+----------------> 6
+----------------> 7
+Ack plus grand que le num de sequence : 4
+Nous cherchons 0 et avons recu 4
+Rentre dans le affichage de timer ? 0
+----------------> 8
+Already acknowledged !
+Nous cherchons 0 et avons recu 4
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 5
+Nous cherchons 0 et avons recu 5
+Rentre dans le affichage de timer ? 0
+----------------> 9
+Ack plus grand que le num de sequence : 8
+Nous cherchons 0 et avons recu 8
+Rentre dans le affichage de timer ? 0
+----------------> 10
+----------------> 11
+----------------> 12
+Already acknowledged !
+Nous cherchons 0 et avons recu 8
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 8
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 9
+Nous cherchons 0 et avons recu 9
+Rentre dans le affichage de timer ? 0
+----------------> 13
+Ack plus grand que le num de sequence : 12
+Nous cherchons 0 et avons recu 12
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 14
+----------------> 15
+----------------> 16
+Already acknowledged !
+Nous cherchons 14 et avons recu 12
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 14 et avons recu 12
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 13
+Nous cherchons 14 et avons recu 13
+Rentre dans le affichage de timer ? 0
+----------------> 17
+Ack plus grand que le num de sequence : 14
+Nous cherchons 14 et avons recu 14
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0157001018524170
+La valeur du timer est de 15700.101852
+La valeur du timer est de 15700.101852
+----------------> 18
+Ack plus grand que le num de sequence : 15
+Nous cherchons 0 et avons recu 15
+Rentre dans le affichage de timer ? 0
+----------------> 19
+Ack plus grand que le num de sequence : 16
+Nous cherchons 0 et avons recu 16
+Rentre dans le affichage de timer ? 0
+----------------> 20
+Ack plus grand que le num de sequence : 17
+Nous cherchons 0 et avons recu 17
+Rentre dans le affichage de timer ? 0
+----------------> 21
+Ack plus grand que le num de sequence : 19
+Nous cherchons 0 et avons recu 19
+Rentre dans le affichage de timer ? 0
+----------------> 22
+----------------> 23
+Ack plus grand que le num de sequence : 20
+Nous cherchons 0 et avons recu 20
+Rentre dans le affichage de timer ? 0
+----------------> 24
+Already acknowledged !
+Nous cherchons 0 et avons recu 20
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 24
+Nous cherchons 0 et avons recu 24
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 25
+----------------> 26
+----------------> 27
+----------------> 28
+Already acknowledged !
+Nous cherchons 25 et avons recu 24
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 25 et avons recu 24
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 25 et avons recu 24
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 26
+Nous cherchons 25 et avons recu 26
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0145444869995117
+La valeur du timer est de 14544.487000
+La valeur du timer est de 14544.487000
+----------------> 29
+----------------> 30
+Ack plus grand que le num de sequence : 28
+Nous cherchons 0 et avons recu 28
+Rentre dans le affichage de timer ? 0
+----------------> 31
+----------------> 32
+Already acknowledged !
+Nous cherchons 0 et avons recu 28
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 28
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 29
+Nous cherchons 0 et avons recu 29
+Rentre dans le affichage de timer ? 0
+----------------> 33
+Ack plus grand que le num de sequence : 30
+Nous cherchons 0 et avons recu 30
+Rentre dans le affichage de timer ? 0
+----------------> 34
+Ack plus grand que le num de sequence : 32
+Nous cherchons 0 et avons recu 32
+Rentre dans le affichage de timer ? 0
+----------------> 35
+----------------> 36
+Already acknowledged !
+Nous cherchons 0 et avons recu 32
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 36
+Nous cherchons 0 et avons recu 36
+Rentre dans le affichage de timer ? 0
+----------------> 37
+----------------> 38
+----------------> 39
+----------------> 40
+Already acknowledged !
+Nous cherchons 0 et avons recu 36
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 36
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 36
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 38
+Nous cherchons 0 et avons recu 38
+Rentre dans le affichage de timer ? 0
+----------------> 41
+----------------> 42
+Already acknowledged !
+Nous cherchons 0 et avons recu 38
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 41
+Nous cherchons 0 et avons recu 41
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 43
+----------------> 44
+----------------> 45
+Ack plus grand que le num de sequence : 42
+Nous cherchons 43 et avons recu 42
+Rentre dans le affichage de timer ? 0
+----------------> 46
+Already acknowledged !
+Nous cherchons 43 et avons recu 42
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 43 et avons recu 42
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 43
+Nous cherchons 43 et avons recu 43
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0114548206329346
+La valeur du timer est de 11454.820633
+La valeur du timer est de 11454.820633
+On lance le RTT calculation
+----------------> 47
+Ack plus grand que le num de sequence : 46
+Nous cherchons 47 et avons recu 46
+Rentre dans le affichage de timer ? 0
+----------------> 48
+----------------> 49
+----------------> 50
+Already acknowledged !
+Nous cherchons 47 et avons recu 46
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 47
+Nous cherchons 47 et avons recu 47
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0170378684997559
+La valeur du timer est de 17037.868500
+La valeur du timer est de 17037.868500
+----------------> 51
+Ack plus grand que le num de sequence : 48
+Nous cherchons 0 et avons recu 48
+Rentre dans le affichage de timer ? 0
+----------------> 52
+Ack plus grand que le num de sequence : 49
+Nous cherchons 0 et avons recu 49
+Rentre dans le affichage de timer ? 0
+----------------> 53
+Ack plus grand que le num de sequence : 52
+Nous cherchons 0 et avons recu 52
+Rentre dans le affichage de timer ? 0
+----------------> 54
+----------------> 55
+----------------> 56
+Already acknowledged !
+Nous cherchons 0 et avons recu 52
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 52
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 56
+Nous cherchons 0 et avons recu 56
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 57
+----------------> 58
+----------------> 59
+----------------> 60
+Already acknowledged !
+Nous cherchons 57 et avons recu 56
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 57 et avons recu 56
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 57 et avons recu 56
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 57
+Nous cherchons 57 et avons recu 57
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0158245563507080
+La valeur du timer est de 15824.556351
+La valeur du timer est de 15824.556351
+----------------> 61
+Ack plus grand que le num de sequence : 60
+Nous cherchons 0 et avons recu 60
+Rentre dans le affichage de timer ? 0
+----------------> 62
+----------------> 63
+On lance le RTT calculation
+----------------> 64
+Already acknowledged !
+Nous cherchons 64 et avons recu 60
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 63
+Nous cherchons 64 et avons recu 63
+Rentre dans le affichage de timer ? 0
+----------------> 65
+----------------> 66
+----------------> 67
+Already acknowledged !
+Nous cherchons 64 et avons recu 63
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 64 et avons recu 63
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 64 et avons recu 63
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 64
+Nous cherchons 64 et avons recu 64
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0286972522735596
+La valeur du timer est de 28697.252274
+La valeur du timer est de 28697.252274
+----------------> 68
+Ack plus grand que le num de sequence : 66
+Nous cherchons 0 et avons recu 66
+Rentre dans le affichage de timer ? 0
+----------------> 69
+----------------> 70
+Already acknowledged !
+Nous cherchons 0 et avons recu 66
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 67
+Nous cherchons 0 et avons recu 67
+Rentre dans le affichage de timer ? 0
+----------------> 71
+Ack plus grand que le num de sequence : 68
+Nous cherchons 0 et avons recu 68
+Rentre dans le affichage de timer ? 0
+----------------> 72
+Ack plus grand que le num de sequence : 70
+Nous cherchons 0 et avons recu 70
+Rentre dans le affichage de timer ? 0
+----------------> 73
+----------------> 74
+Already acknowledged !
+Nous cherchons 0 et avons recu 70
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 71
+Nous cherchons 0 et avons recu 71
+Rentre dans le affichage de timer ? 0
+----------------> 75
+Ack plus grand que le num de sequence : 72
+Nous cherchons 0 et avons recu 72
+Rentre dans le affichage de timer ? 0
+----------------> 76
+Ack plus grand que le num de sequence : 73
+Nous cherchons 0 et avons recu 73
+Rentre dans le affichage de timer ? 0
+----------------> 77
+Ack plus grand que le num de sequence : 75
+Nous cherchons 0 et avons recu 75
+Rentre dans le affichage de timer ? 0
+----------------> 78
+----------------> 79
+Already acknowledged !
+Nous cherchons 0 et avons recu 75
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 77
+Nous cherchons 0 et avons recu 77
+Rentre dans le affichage de timer ? 0
+----------------> 80
+----------------> 81
+Already acknowledged !
+Nous cherchons 0 et avons recu 77
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 78
+Nous cherchons 0 et avons recu 78
+Rentre dans le affichage de timer ? 0
+----------------> 82
+Ack plus grand que le num de sequence : 80
+Nous cherchons 0 et avons recu 80
+Rentre dans le affichage de timer ? 0
+----------------> 83
+----------------> 84
+Already acknowledged !
+Nous cherchons 0 et avons recu 80
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 81
+Nous cherchons 0 et avons recu 81
+Rentre dans le affichage de timer ? 0
+----------------> 85
+Ack plus grand que le num de sequence : 82
+Nous cherchons 0 et avons recu 82
+Rentre dans le affichage de timer ? 0
+----------------> 86
+Ack plus grand que le num de sequence : 84
+Nous cherchons 0 et avons recu 84
+Rentre dans le affichage de timer ? 0
+----------------> 87
+----------------> 88
+Already acknowledged !
+Nous cherchons 0 et avons recu 84
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 87
+Nous cherchons 0 et avons recu 87
+Rentre dans le affichage de timer ? 0
+----------------> 89
+----------------> 90
+----------------> 91
+Already acknowledged !
+Nous cherchons 0 et avons recu 87
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 87
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 89
+Nous cherchons 0 et avons recu 89
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 92
+----------------> 93
+Already acknowledged !
+Nous cherchons 92 et avons recu 89
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 91
+Nous cherchons 92 et avons recu 91
+Rentre dans le affichage de timer ? 0
+----------------> 94
+----------------> 95
+Already acknowledged !
+Nous cherchons 92 et avons recu 91
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 93
+Nous cherchons 92 et avons recu 93
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0193822383880615
+La valeur du timer est de 19382.238388
+La valeur du timer est de 19382.238388
+----------------> 96
+----------------> 97
+Ack plus grand que le num de sequence : 94
+Nous cherchons 0 et avons recu 94
+Rentre dans le affichage de timer ? 0
+----------------> 98
+Already acknowledged !
+Nous cherchons 0 et avons recu 94
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 95
+Nous cherchons 0 et avons recu 95
+Rentre dans le affichage de timer ? 0
+----------------> 99
+Ack plus grand que le num de sequence : 98
+Nous cherchons 0 et avons recu 98
+Rentre dans le affichage de timer ? 0
+----------------> 100
+----------------> 101
+----------------> 102
+Ack plus grand que le num de sequence : 99
+Nous cherchons 0 et avons recu 99
+Rentre dans le affichage de timer ? 0
+----------------> 103
+Already acknowledged !
+Nous cherchons 0 et avons recu 99
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 99
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 100
+Nous cherchons 0 et avons recu 100
+Rentre dans le affichage de timer ? 0
+----------------> 104
+Ack plus grand que le num de sequence : 101
+Nous cherchons 0 et avons recu 101
+Rentre dans le affichage de timer ? 0
+----------------> 105
+Ack plus grand que le num de sequence : 103
+Nous cherchons 0 et avons recu 103
+Rentre dans le affichage de timer ? 0
+----------------> 106
+----------------> 107
+Already acknowledged !
+Nous cherchons 0 et avons recu 103
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 105
+Nous cherchons 0 et avons recu 105
+Rentre dans le affichage de timer ? 0
+----------------> 108
+----------------> 109
+Ack plus grand que le num de sequence : 107
+Nous cherchons 0 et avons recu 107
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 110
+----------------> 111
+Already acknowledged !
+Nous cherchons 110 et avons recu 107
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 109
+Nous cherchons 110 et avons recu 109
+Rentre dans le affichage de timer ? 0
+----------------> 112
+----------------> 113
+Already acknowledged !
+Nous cherchons 110 et avons recu 109
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 111
+Nous cherchons 110 et avons recu 111
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0162470340728760
+La valeur du timer est de 16247.034073
+La valeur du timer est de 16247.034073
+----------------> 114
+----------------> 115
+Already acknowledged !
+Nous cherchons 0 et avons recu 111
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 112
+Nous cherchons 0 et avons recu 112
+Rentre dans le affichage de timer ? 0
+----------------> 116
+Ack plus grand que le num de sequence : 114
+Nous cherchons 0 et avons recu 114
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 117
+----------------> 118
+Already acknowledged !
+Nous cherchons 117 et avons recu 114
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 115
+Nous cherchons 117 et avons recu 115
+Rentre dans le affichage de timer ? 0
+----------------> 119
+Ack plus grand que le num de sequence : 116
+Nous cherchons 117 et avons recu 116
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 120
+Ack plus grand que le num de sequence : 117
+Nous cherchons 120 et avons recu 117
+Rentre dans le affichage de timer ? 0
+----------------> 121
+Ack plus grand que le num de sequence : 119
+Nous cherchons 120 et avons recu 119
+Rentre dans le affichage de timer ? 0
+----------------> 122
+----------------> 123
+Ack plus grand que le num de sequence : 120
+Nous cherchons 120 et avons recu 120
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0164604187011719
+La valeur du timer est de 16460.418701
+La valeur du timer est de 16460.418701
+----------------> 124
+Already acknowledged !
+Nous cherchons 0 et avons recu 120
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 121
+Nous cherchons 0 et avons recu 121
+Rentre dans le affichage de timer ? 0
+----------------> 125
+Ack plus grand que le num de sequence : 122
+Nous cherchons 0 et avons recu 122
+Rentre dans le affichage de timer ? 0
+----------------> 126
+Ack plus grand que le num de sequence : 124
+Nous cherchons 0 et avons recu 124
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 127
+----------------> 128
+Already acknowledged !
+Nous cherchons 127 et avons recu 124
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 126
+Nous cherchons 127 et avons recu 126
+Rentre dans le affichage de timer ? 0
+----------------> 129
+On lance le RTT calculation
+----------------> 130
+Ack plus grand que le num de sequence : 128
+Nous cherchons 130 et avons recu 128
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 131
+----------------> 132
+Already acknowledged !
+Nous cherchons 131 et avons recu 128
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 131 et avons recu 128
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 131
+Nous cherchons 131 et avons recu 131
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0159103870391846
+La valeur du timer est de 15910.387039
+La valeur du timer est de 15910.387039
+----------------> 133
+----------------> 134
+----------------> 135
+Already acknowledged !
+Nous cherchons 0 et avons recu 131
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 131
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 132
+Nous cherchons 0 et avons recu 132
+Rentre dans le affichage de timer ? 0
+----------------> 136
+Ack plus grand que le num de sequence : 133
+Nous cherchons 0 et avons recu 133
+Rentre dans le affichage de timer ? 0
+----------------> 137
+Ack plus grand que le num de sequence : 135
+Nous cherchons 0 et avons recu 135
+Rentre dans le affichage de timer ? 0
+----------------> 138
+----------------> 139
+Already acknowledged !
+Nous cherchons 0 et avons recu 135
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 139
+Nous cherchons 0 et avons recu 139
+Rentre dans le affichage de timer ? 0
+----------------> 140
+----------------> 141
+----------------> 142
+----------------> 143
+Already acknowledged !
+Nous cherchons 0 et avons recu 139
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 139
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 139
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 142
+Nous cherchons 0 et avons recu 142
+Rentre dans le affichage de timer ? 0
+----------------> 144
+----------------> 145
+On lance le RTT calculation
+----------------> 146
+Ack plus grand que le num de sequence : 143
+Nous cherchons 146 et avons recu 143
+Rentre dans le affichage de timer ? 0
+----------------> 147
+Already acknowledged !
+Nous cherchons 146 et avons recu 143
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 146 et avons recu 143
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 147
+Nous cherchons 146 et avons recu 147
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0134353637695312
+La valeur du timer est de 13435.363770
+La valeur du timer est de 13435.363770
+----------------> 148
+----------------> 149
+----------------> 150
+----------------> 151
+Already acknowledged !
+Nous cherchons 0 et avons recu 147
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 147
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 150
+Nous cherchons 0 et avons recu 150
+Rentre dans le affichage de timer ? 0
+----------------> 152
+----------------> 153
+----------------> 154
+Already acknowledged !
+Nous cherchons 0 et avons recu 150
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 151
+Nous cherchons 0 et avons recu 151
+Rentre dans le affichage de timer ? 0
+----------------> 155
+Already acknowledged !
+Nous cherchons 0 et avons recu 151
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 151
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 154
+Nous cherchons 0 et avons recu 154
+Rentre dans le affichage de timer ? 0
+----------------> 156
+----------------> 157
+----------------> 158
+Already acknowledged !
+Nous cherchons 0 et avons recu 154
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 155
+Nous cherchons 0 et avons recu 155
+Rentre dans le affichage de timer ? 0
+----------------> 159
+Already acknowledged !
+Nous cherchons 0 et avons recu 155
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 156
+Nous cherchons 0 et avons recu 156
+Rentre dans le affichage de timer ? 0
+----------------> 160
+Ack plus grand que le num de sequence : 159
+Nous cherchons 0 et avons recu 159
+Rentre dans le affichage de timer ? 0
+----------------> 161
+On lance le RTT calculation
+----------------> 162
+On lance le RTT calculation
+----------------> 163
+Already acknowledged !
+Nous cherchons 163 et avons recu 159
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 163 et avons recu 159
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 162
+Nous cherchons 163 et avons recu 162
+Rentre dans le affichage de timer ? 0
+----------------> 164
+----------------> 165
+----------------> 166
+Ack plus grand que le num de sequence : 163
+Nous cherchons 163 et avons recu 163
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0168571472167969
+La valeur du timer est de 16857.147217
+La valeur du timer est de 16857.147217
+----------------> 167
+Already acknowledged !
+Nous cherchons 0 et avons recu 163
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 163
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 165
+Nous cherchons 0 et avons recu 165
+Rentre dans le affichage de timer ? 0
+----------------> 168
+On lance le RTT calculation
+----------------> 169
+Ack plus grand que le num de sequence : 167
+Nous cherchons 169 et avons recu 167
+Rentre dans le affichage de timer ? 0
+----------------> 170
+----------------> 171
+Already acknowledged !
+Nous cherchons 169 et avons recu 167
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 168
+Nous cherchons 169 et avons recu 168
+Rentre dans le affichage de timer ? 0
+----------------> 172
+Ack plus grand que le num de sequence : 169
+Nous cherchons 169 et avons recu 169
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0209763050079346
+La valeur du timer est de 20976.305008
+La valeur du timer est de 20976.305008
+----------------> 173
+Ack plus grand que le num de sequence : 171
+Nous cherchons 0 et avons recu 171
+Rentre dans le affichage de timer ? 0
+----------------> 174
+----------------> 175
+Already acknowledged !
+Nous cherchons 0 et avons recu 171
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 173
+Nous cherchons 0 et avons recu 173
+Rentre dans le affichage de timer ? 0
+----------------> 176
+----------------> 177
+Ack plus grand que le num de sequence : 175
+Nous cherchons 0 et avons recu 175
+Rentre dans le affichage de timer ? 0
+----------------> 178
+----------------> 179
+Already acknowledged !
+Nous cherchons 0 et avons recu 175
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 175
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 177
+Nous cherchons 0 et avons recu 177
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 180
+----------------> 181
+Ack plus grand que le num de sequence : 178
+Nous cherchons 180 et avons recu 178
+Rentre dans le affichage de timer ? 0
+----------------> 182
+Ack plus grand que le num de sequence : 179
+Nous cherchons 180 et avons recu 179
+Rentre dans le affichage de timer ? 0
+----------------> 183
+Already acknowledged !
+Nous cherchons 180 et avons recu 179
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 180
+Nous cherchons 180 et avons recu 180
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0175850391387939
+La valeur du timer est de 17585.039139
+La valeur du timer est de 17585.039139
+----------------> 184
+Ack plus grand que le num de sequence : 181
+Nous cherchons 0 et avons recu 181
+Rentre dans le affichage de timer ? 0
+----------------> 185
+Ack plus grand que le num de sequence : 182
+Nous cherchons 0 et avons recu 182
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 186
+Ack plus grand que le num de sequence : 183
+Nous cherchons 186 et avons recu 183
+Rentre dans le affichage de timer ? 0
+----------------> 187
+Ack plus grand que le num de sequence : 185
+Nous cherchons 186 et avons recu 185
+Rentre dans le affichage de timer ? 0
+----------------> 188
+----------------> 189
+Ack plus grand que le num de sequence : 186
+Nous cherchons 186 et avons recu 186
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0160570144653320
+La valeur du timer est de 16057.014465
+La valeur du timer est de 16057.014465
+----------------> 190
+Ack plus grand que le num de sequence : 188
+Nous cherchons 0 et avons recu 188
+Rentre dans le affichage de timer ? 0
+----------------> 191
+On lance le RTT calculation
+----------------> 192
+Ack plus grand que le num de sequence : 189
+Nous cherchons 192 et avons recu 189
+Rentre dans le affichage de timer ? 0
+----------------> 193
+Already acknowledged !
+Nous cherchons 192 et avons recu 189
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 192 et avons recu 189
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 190
+Nous cherchons 192 et avons recu 190
+Rentre dans le affichage de timer ? 0
+----------------> 194
+Ack plus grand que le num de sequence : 191
+Nous cherchons 192 et avons recu 191
+Rentre dans le affichage de timer ? 0
+----------------> 195
+Ack plus grand que le num de sequence : 192
+Nous cherchons 192 et avons recu 192
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0205266475677490
+La valeur du timer est de 20526.647568
+La valeur du timer est de 20526.647568
+----------------> 196
+Ack plus grand que le num de sequence : 193
+Nous cherchons 0 et avons recu 193
+Rentre dans le affichage de timer ? 0
+----------------> 197
+Ack plus grand que le num de sequence : 195
+Nous cherchons 0 et avons recu 195
+Rentre dans le affichage de timer ? 0
+----------------> 198
+----------------> 199
+Already acknowledged !
+Nous cherchons 0 et avons recu 195
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 199
+Nous cherchons 0 et avons recu 199
+Rentre dans le affichage de timer ? 0
+----------------> 200
+----------------> 201
+On lance le RTT calculation
+----------------> 202
+----------------> 203
+Already acknowledged !
+Nous cherchons 202 et avons recu 199
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 202 et avons recu 199
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 202 et avons recu 199
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 202
+Nous cherchons 202 et avons recu 202
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0213325023651123
+La valeur du timer est de 21332.502365
+La valeur du timer est de 21332.502365
+----------------> 204
+----------------> 205
+----------------> 206
+Already acknowledged !
+Nous cherchons 0 et avons recu 202
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 202
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 203
+Nous cherchons 0 et avons recu 203
+Rentre dans le affichage de timer ? 0
+----------------> 207
+Ack plus grand que le num de sequence : 205
+Nous cherchons 0 et avons recu 205
+Rentre dans le affichage de timer ? 0
+----------------> 208
+----------------> 209
+Ack plus grand que le num de sequence : 206
+Nous cherchons 0 et avons recu 206
+Rentre dans le affichage de timer ? 0
+----------------> 210
+Already acknowledged !
+Nous cherchons 0 et avons recu 206
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 207
+Nous cherchons 0 et avons recu 207
+Rentre dans le affichage de timer ? 0
+----------------> 211
+Ack plus grand que le num de sequence : 209
+Nous cherchons 0 et avons recu 209
+Rentre dans le affichage de timer ? 0
+----------------> 212
+----------------> 213
+Already acknowledged !
+Nous cherchons 0 et avons recu 209
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 210
+Nous cherchons 0 et avons recu 210
+Rentre dans le affichage de timer ? 0
+----------------> 214
+Ack plus grand que le num de sequence : 213
+Nous cherchons 0 et avons recu 213
+Rentre dans le affichage de timer ? 0
+----------------> 215
+----------------> 216
+----------------> 217
+Already acknowledged !
+Nous cherchons 0 et avons recu 213
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 214
+Nous cherchons 0 et avons recu 214
+Rentre dans le affichage de timer ? 0
+----------------> 218
+Ack plus grand que le num de sequence : 216
+Nous cherchons 0 et avons recu 216
+Rentre dans le affichage de timer ? 0
+----------------> 219
+----------------> 220
+Already acknowledged !
+Nous cherchons 0 et avons recu 216
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 220
+Nous cherchons 0 et avons recu 220
+Rentre dans le affichage de timer ? 0
+----------------> 221
+----------------> 222
+----------------> 223
+----------------> 224
+Already acknowledged !
+Nous cherchons 0 et avons recu 220
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 220
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 220
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 220
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 222
+Nous cherchons 0 et avons recu 222
+Rentre dans le affichage de timer ? 0
+----------------> 225
+----------------> 226
+Already acknowledged !
+Nous cherchons 0 et avons recu 222
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 223
+Nous cherchons 0 et avons recu 223
+Rentre dans le affichage de timer ? 0
+----------------> 227
+Ack plus grand que le num de sequence : 224
+Nous cherchons 0 et avons recu 224
+Rentre dans le affichage de timer ? 0
+----------------> 228
+Ack plus grand que le num de sequence : 225
+Nous cherchons 0 et avons recu 225
+Rentre dans le affichage de timer ? 0
+----------------> 229
+Ack plus grand que le num de sequence : 226
+Nous cherchons 0 et avons recu 226
+Rentre dans le affichage de timer ? 0
+----------------> 230
+Ack plus grand que le num de sequence : 227
+Nous cherchons 0 et avons recu 227
+Rentre dans le affichage de timer ? 0
+----------------> 231
+Ack plus grand que le num de sequence : 228
+Nous cherchons 0 et avons recu 228
+Rentre dans le affichage de timer ? 0
+----------------> 232
+Ack plus grand que le num de sequence : 232
+Nous cherchons 0 et avons recu 232
+Rentre dans le affichage de timer ? 0
+----------------> 233
+----------------> 234
+----------------> 235
+----------------> 236
+Already acknowledged !
+Nous cherchons 0 et avons recu 232
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 232
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 232
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 235
+Nous cherchons 0 et avons recu 235
+Rentre dans le affichage de timer ? 0
+----------------> 237
+----------------> 238
+----------------> 239
+Already acknowledged !
+Nous cherchons 0 et avons recu 235
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 236
+Nous cherchons 0 et avons recu 236
+Rentre dans le affichage de timer ? 0
+----------------> 240
+Already acknowledged !
+Nous cherchons 0 et avons recu 236
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 237
+Nous cherchons 0 et avons recu 237
+Rentre dans le affichage de timer ? 0
+----------------> 241
+Ack plus grand que le num de sequence : 238
+Nous cherchons 0 et avons recu 238
+Rentre dans le affichage de timer ? 0
+----------------> 242
+Ack plus grand que le num de sequence : 240
+Nous cherchons 0 et avons recu 240
+Rentre dans le affichage de timer ? 0
+----------------> 243
+On lance le RTT calculation
+----------------> 244
+Ack plus grand que le num de sequence : 242
+Nous cherchons 244 et avons recu 242
+Rentre dans le affichage de timer ? 0
+----------------> 245
+----------------> 246
+Ack plus grand que le num de sequence : 244
+Nous cherchons 244 et avons recu 244
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0177104473114014
+La valeur du timer est de 17710.447311
+La valeur du timer est de 17710.447311
+----------------> 247
+----------------> 248
+Already acknowledged !
+Nous cherchons 0 et avons recu 244
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 244
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 246
+Nous cherchons 0 et avons recu 246
+Rentre dans le affichage de timer ? 0
+----------------> 249
+----------------> 250
+Already acknowledged !
+Nous cherchons 0 et avons recu 246
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 248
+Nous cherchons 0 et avons recu 248
+Rentre dans le affichage de timer ? 0
+----------------> 251
+----------------> 252
+Already acknowledged !
+Nous cherchons 0 et avons recu 248
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 249
+Nous cherchons 0 et avons recu 249
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 253
+Ack plus grand que le num de sequence : 250
+Nous cherchons 253 et avons recu 250
+Rentre dans le affichage de timer ? 0
+----------------> 254
+Ack plus grand que le num de sequence : 251
+Nous cherchons 253 et avons recu 251
+Rentre dans le affichage de timer ? 0
+----------------> 255
+Ack plus grand que le num de sequence : 252
+Nous cherchons 253 et avons recu 252
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 256
+Ack plus grand que le num de sequence : 253
+Nous cherchons 256 et avons recu 253
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 257
+Ack plus grand que le num de sequence : 254
+Nous cherchons 257 et avons recu 254
+Rentre dans le affichage de timer ? 0
+----------------> 258
+Ack plus grand que le num de sequence : 256
+Nous cherchons 257 et avons recu 256
+Rentre dans le affichage de timer ? 0
+----------------> 259
+----------------> 260
+Ack plus grand que le num de sequence : 258
+Nous cherchons 257 et avons recu 258
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0193774700164795
+La valeur du timer est de 19377.470016
+La valeur du timer est de 19377.470016
+----------------> 261
+----------------> 262
+Already acknowledged !
+Nous cherchons 0 et avons recu 258
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 258
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 260
+Nous cherchons 0 et avons recu 260
+Rentre dans le affichage de timer ? 0
+----------------> 263
+----------------> 264
+Ack plus grand que le num de sequence : 262
+Nous cherchons 0 et avons recu 262
+Rentre dans le affichage de timer ? 0
+----------------> 265
+----------------> 266
+Already acknowledged !
+Nous cherchons 0 et avons recu 262
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 262
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 263
+Nous cherchons 0 et avons recu 263
+Rentre dans le affichage de timer ? 0
+----------------> 267
+Ack plus grand que le num de sequence : 264
+Nous cherchons 0 et avons recu 264
+Rentre dans le affichage de timer ? 0
+----------------> 268
+Ack plus grand que le num de sequence : 266
+Nous cherchons 0 et avons recu 266
+Rentre dans le affichage de timer ? 0
+----------------> 269
+----------------> 270
+Already acknowledged !
+Nous cherchons 0 et avons recu 266
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 268
+Nous cherchons 0 et avons recu 268
+Rentre dans le affichage de timer ? 0
+----------------> 271
+----------------> 272
+Already acknowledged !
+Nous cherchons 0 et avons recu 268
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 272
+Nous cherchons 0 et avons recu 272
+Rentre dans le affichage de timer ? 0
+----------------> 273
+----------------> 274
+----------------> 275
+----------------> 276
+Already acknowledged !
+Nous cherchons 0 et avons recu 272
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 272
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 272
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 273
+Nous cherchons 0 et avons recu 273
+Rentre dans le affichage de timer ? 0
+----------------> 277
+Ack plus grand que le num de sequence : 275
+Nous cherchons 0 et avons recu 275
+Rentre dans le affichage de timer ? 0
+----------------> 278
+----------------> 279
+Ack plus grand que le num de sequence : 276
+Nous cherchons 0 et avons recu 276
+Rentre dans le affichage de timer ? 0
+----------------> 280
+Already acknowledged !
+Nous cherchons 0 et avons recu 276
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 278
+Nous cherchons 0 et avons recu 278
+Rentre dans le affichage de timer ? 0
+----------------> 281
+On lance le RTT calculation
+----------------> 282
+Already acknowledged !
+Nous cherchons 282 et avons recu 278
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 280
+Nous cherchons 282 et avons recu 280
+Rentre dans le affichage de timer ? 0
+----------------> 283
+On lance le RTT calculation
+----------------> 284
+Already acknowledged !
+Nous cherchons 284 et avons recu 280
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 282
+Nous cherchons 284 et avons recu 282
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 285
+----------------> 286
+Already acknowledged !
+Nous cherchons 285 et avons recu 282
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 284
+Nous cherchons 285 et avons recu 284
+Rentre dans le affichage de timer ? 0
+----------------> 287
+----------------> 288
+Ack plus grand que le num de sequence : 285
+Nous cherchons 285 et avons recu 285
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0168399810791016
+La valeur du timer est de 16839.981079
+La valeur du timer est de 16839.981079
+----------------> 289
+Ack plus grand que le num de sequence : 286
+Nous cherchons 0 et avons recu 286
+Rentre dans le affichage de timer ? 0
+----------------> 290
+Ack plus grand que le num de sequence : 288
+Nous cherchons 0 et avons recu 288
+Rentre dans le affichage de timer ? 0
+----------------> 291
+On lance le RTT calculation
+----------------> 292
+Already acknowledged !
+Nous cherchons 292 et avons recu 288
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 292 et avons recu 288
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 292
+Nous cherchons 292 et avons recu 292
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0125072002410889
+La valeur du timer est de 12507.200241
+La valeur du timer est de 12507.200241
+----------------> 293
+----------------> 294
+----------------> 295
+----------------> 296
+Already acknowledged !
+Nous cherchons 0 et avons recu 292
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 292
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 292
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 294
+Nous cherchons 0 et avons recu 294
+Rentre dans le affichage de timer ? 0
+----------------> 297
+----------------> 298
+Ack plus grand que le num de sequence : 296
+Nous cherchons 0 et avons recu 296
+Rentre dans le affichage de timer ? 0
+----------------> 299
+----------------> 300
+Already acknowledged !
+Nous cherchons 0 et avons recu 296
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 296
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 298
+Nous cherchons 0 et avons recu 298
+Rentre dans le affichage de timer ? 0
+----------------> 301
+----------------> 302
+Ack plus grand que le num de sequence : 299
+Nous cherchons 0 et avons recu 299
+Rentre dans le affichage de timer ? 0
+----------------> 303
+Already acknowledged !
+Nous cherchons 0 et avons recu 299
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 300
+Nous cherchons 0 et avons recu 300
+Rentre dans le affichage de timer ? 0
+----------------> 304
+Ack plus grand que le num de sequence : 301
+Nous cherchons 0 et avons recu 301
+Rentre dans le affichage de timer ? 0
+----------------> 305
+Ack plus grand que le num de sequence : 303
+Nous cherchons 0 et avons recu 303
+Rentre dans le affichage de timer ? 0
+----------------> 306
+----------------> 307
+Already acknowledged !
+Nous cherchons 0 et avons recu 303
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 304
+Nous cherchons 0 et avons recu 304
+Rentre dans le affichage de timer ? 0
+----------------> 308
+Ack plus grand que le num de sequence : 305
+Nous cherchons 0 et avons recu 305
+Rentre dans le affichage de timer ? 0
+----------------> 309
+Ack plus grand que le num de sequence : 307
+Nous cherchons 0 et avons recu 307
+Rentre dans le affichage de timer ? 0
+----------------> 310
+----------------> 311
+Already acknowledged !
+Nous cherchons 0 et avons recu 307
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 308
+Nous cherchons 0 et avons recu 308
+Rentre dans le affichage de timer ? 0
+----------------> 312
+Ack plus grand que le num de sequence : 310
+Nous cherchons 0 et avons recu 310
+Rentre dans le affichage de timer ? 0
+----------------> 313
+----------------> 314
+Already acknowledged !
+Nous cherchons 0 et avons recu 310
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 314
+Nous cherchons 0 et avons recu 314
+Rentre dans le affichage de timer ? 0
+----------------> 315
+----------------> 316
+----------------> 317
+----------------> 318
+Already acknowledged !
+Nous cherchons 0 et avons recu 314
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 314
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 314
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 315
+Nous cherchons 0 et avons recu 315
+Rentre dans le affichage de timer ? 0
+----------------> 319
+Ack plus grand que le num de sequence : 317
+Nous cherchons 0 et avons recu 317
+Rentre dans le affichage de timer ? 0
+----------------> 320
+----------------> 321
+Ack plus grand que le num de sequence : 321
+Nous cherchons 0 et avons recu 321
+Rentre dans le affichage de timer ? 0
+----------------> 322
+----------------> 323
+----------------> 324
+----------------> 325
+Already acknowledged !
+Nous cherchons 0 et avons recu 321
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 321
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 321
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 325
+Nous cherchons 0 et avons recu 325
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 326
+----------------> 327
+----------------> 328
+On lance le RTT calculation
+----------------> 329
+Already acknowledged !
+Nous cherchons 329 et avons recu 325
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 329 et avons recu 325
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 329 et avons recu 325
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 326
+Nous cherchons 329 et avons recu 326
+Rentre dans le affichage de timer ? 0
+----------------> 330
+Ack plus grand que le num de sequence : 328
+Nous cherchons 329 et avons recu 328
+Rentre dans le affichage de timer ? 0
+----------------> 331
+----------------> 332
+Ack plus grand que le num de sequence : 329
+Nous cherchons 329 et avons recu 329
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0205256938934326
+La valeur du timer est de 20525.693893
+La valeur du timer est de 20525.693893
+On lance le RTT calculation
+----------------> 333
+Ack plus grand que le num de sequence : 330
+Nous cherchons 333 et avons recu 330
+Rentre dans le affichage de timer ? 0
+----------------> 334
+Ack plus grand que le num de sequence : 331
+Nous cherchons 333 et avons recu 331
+Rentre dans le affichage de timer ? 0
+----------------> 335
+Ack plus grand que le num de sequence : 333
+Nous cherchons 333 et avons recu 333
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0217075347900391
+La valeur du timer est de 21707.534790
+La valeur du timer est de 21707.534790
+On lance le RTT calculation
+----------------> 336
+----------------> 337
+Ack plus grand que le num de sequence : 334
+Nous cherchons 336 et avons recu 334
+Rentre dans le affichage de timer ? 0
+----------------> 338
+Already acknowledged !
+Nous cherchons 336 et avons recu 334
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 336
+Nous cherchons 336 et avons recu 336
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0189585685729980
+La valeur du timer est de 18958.568573
+La valeur du timer est de 18958.568573
+----------------> 339
+----------------> 340
+Ack plus grand que le num de sequence : 338
+Nous cherchons 0 et avons recu 338
+Rentre dans le affichage de timer ? 0
+----------------> 341
+----------------> 342
+Already acknowledged !
+Nous cherchons 0 et avons recu 338
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 338
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 341
+Nous cherchons 0 et avons recu 341
+Rentre dans le affichage de timer ? 0
+----------------> 343
+----------------> 344
+----------------> 345
+Ack plus grand que le num de sequence : 342
+Nous cherchons 0 et avons recu 342
+Rentre dans le affichage de timer ? 0
+----------------> 346
+Already acknowledged !
+Nous cherchons 0 et avons recu 342
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 342
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 344
+Nous cherchons 0 et avons recu 344
+Rentre dans le affichage de timer ? 0
+----------------> 347
+----------------> 348
+Ack plus grand que le num de sequence : 346
+Nous cherchons 0 et avons recu 346
+Rentre dans le affichage de timer ? 0
+----------------> 349
+On lance le RTT calculation
+----------------> 350
+Already acknowledged !
+Nous cherchons 350 et avons recu 346
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 350 et avons recu 346
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 347
+Nous cherchons 350 et avons recu 347
+Rentre dans le affichage de timer ? 0
+----------------> 351
+Ack plus grand que le num de sequence : 351
+Nous cherchons 350 et avons recu 351
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0256614685058594
+La valeur du timer est de 25661.468506
+La valeur du timer est de 25661.468506
+----------------> 352
+----------------> 353
+----------------> 354
+----------------> 355
+Already acknowledged !
+Nous cherchons 0 et avons recu 351
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 351
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 351
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 352
+Nous cherchons 0 et avons recu 352
+Rentre dans le affichage de timer ? 0
+----------------> 356
+Ack plus grand que le num de sequence : 355
+Nous cherchons 0 et avons recu 355
+Rentre dans le affichage de timer ? 0
+----------------> 357
+----------------> 358
+----------------> 359
+Already acknowledged !
+Nous cherchons 0 et avons recu 355
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 355
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 359
+Nous cherchons 0 et avons recu 359
+Rentre dans le affichage de timer ? 0
+----------------> 360
+----------------> 361
+----------------> 362
+----------------> 363
+Already acknowledged !
+Nous cherchons 0 et avons recu 359
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 359
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 363
+Nous cherchons 0 et avons recu 363
+Rentre dans le affichage de timer ? 0
+----------------> 364
+----------------> 365
+----------------> 366
+----------------> 367
+Already acknowledged !
+Nous cherchons 0 et avons recu 363
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 363
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 363
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 365
+Nous cherchons 0 et avons recu 365
+Rentre dans le affichage de timer ? 0
+----------------> 368
+----------------> 369
+Ack plus grand que le num de sequence : 366
+Nous cherchons 0 et avons recu 366
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 370
+Ack plus grand que le num de sequence : 367
+Nous cherchons 370 et avons recu 367
+Rentre dans le affichage de timer ? 0
+----------------> 371
+Already acknowledged !
+Nous cherchons 370 et avons recu 367
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 369
+Nous cherchons 370 et avons recu 369
+Rentre dans le affichage de timer ? 0
+----------------> 372
+----------------> 373
+Already acknowledged !
+Nous cherchons 370 et avons recu 369
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 371
+Nous cherchons 370 et avons recu 371
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0306234359741211
+La valeur du timer est de 30623.435974
+La valeur du timer est de 30623.435974
+----------------> 374
+----------------> 375
+Ack plus grand que le num de sequence : 375
+Nous cherchons 0 et avons recu 375
+Rentre dans le affichage de timer ? 0
+----------------> 376
+----------------> 377
+----------------> 378
+----------------> 379
+Already acknowledged !
+Nous cherchons 0 et avons recu 375
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 375
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 375
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 378
+Nous cherchons 0 et avons recu 378
+Rentre dans le affichage de timer ? 0
+----------------> 380
+----------------> 381
+----------------> 382
+Ack plus grand que le num de sequence : 379
+Nous cherchons 0 et avons recu 379
+Rentre dans le affichage de timer ? 0
+----------------> 383
+Already acknowledged !
+Nous cherchons 0 et avons recu 379
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 379
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 380
+Nous cherchons 0 et avons recu 380
+Rentre dans le affichage de timer ? 0
+----------------> 384
+Ack plus grand que le num de sequence : 381
+Nous cherchons 0 et avons recu 381
+Rentre dans le affichage de timer ? 0
+----------------> 385
+Ack plus grand que le num de sequence : 382
+Nous cherchons 0 et avons recu 382
+Rentre dans le affichage de timer ? 0
+----------------> 386
+Ack plus grand que le num de sequence : 383
+Nous cherchons 0 et avons recu 383
+Rentre dans le affichage de timer ? 0
+----------------> 387
+Ack plus grand que le num de sequence : 386
+Nous cherchons 0 et avons recu 386
+Rentre dans le affichage de timer ? 0
+----------------> 388
+On lance le RTT calculation
+----------------> 389
+----------------> 390
+Ack plus grand que le num de sequence : 387
+Nous cherchons 389 et avons recu 387
+Rentre dans le affichage de timer ? 0
+----------------> 391
+Already acknowledged !
+Nous cherchons 389 et avons recu 387
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 389 et avons recu 387
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 388
+Nous cherchons 389 et avons recu 388
+Rentre dans le affichage de timer ? 0
+----------------> 392
+Ack plus grand que le num de sequence : 389
+Nous cherchons 389 et avons recu 389
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0239253044128418
+La valeur du timer est de 23925.304413
+La valeur du timer est de 23925.304413
+On lance le RTT calculation
+----------------> 393
+Ack plus grand que le num de sequence : 390
+Nous cherchons 393 et avons recu 390
+Rentre dans le affichage de timer ? 0
+----------------> 394
+Ack plus grand que le num de sequence : 392
+Nous cherchons 393 et avons recu 392
+Rentre dans le affichage de timer ? 0
+----------------> 395
+----------------> 396
+Ack plus grand que le num de sequence : 393
+Nous cherchons 393 et avons recu 393
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0270917415618896
+La valeur du timer est de 27091.741562
+La valeur du timer est de 27091.741562
+----------------> 397
+Ack plus grand que le num de sequence : 394
+Nous cherchons 0 et avons recu 394
+Rentre dans le affichage de timer ? 0
+----------------> 398
+Ack plus grand que le num de sequence : 396
+Nous cherchons 0 et avons recu 396
+Rentre dans le affichage de timer ? 0
+----------------> 399
+----------------> 400
+Already acknowledged !
+Nous cherchons 0 et avons recu 396
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 397
+Nous cherchons 0 et avons recu 397
+Rentre dans le affichage de timer ? 0
+----------------> 401
+Ack plus grand que le num de sequence : 398
+Nous cherchons 0 et avons recu 398
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 402
+Ack plus grand que le num de sequence : 399
+Nous cherchons 402 et avons recu 399
+Rentre dans le affichage de timer ? 0
+----------------> 403
+Ack plus grand que le num de sequence : 400
+Nous cherchons 402 et avons recu 400
+Rentre dans le affichage de timer ? 0
+----------------> 404
+Ack plus grand que le num de sequence : 401
+Nous cherchons 402 et avons recu 401
+Rentre dans le affichage de timer ? 0
+----------------> 405
+Ack plus grand que le num de sequence : 402
+Nous cherchons 402 et avons recu 402
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0179820060729980
+La valeur du timer est de 17982.006073
+La valeur du timer est de 17982.006073
+----------------> 406
+Ack plus grand que le num de sequence : 403
+Nous cherchons 0 et avons recu 403
+Rentre dans le affichage de timer ? 0
+----------------> 407
+Ack plus grand que le num de sequence : 404
+Nous cherchons 0 et avons recu 404
+Rentre dans le affichage de timer ? 0
+----------------> 408
+Ack plus grand que le num de sequence : 405
+Nous cherchons 0 et avons recu 405
+Rentre dans le affichage de timer ? 0
+----------------> 409
+Ack plus grand que le num de sequence : 406
+Nous cherchons 0 et avons recu 406
+Rentre dans le affichage de timer ? 0
+----------------> 410
+Ack plus grand que le num de sequence : 408
+Nous cherchons 0 et avons recu 408
+Rentre dans le affichage de timer ? 0
+----------------> 411
+----------------> 412
+Already acknowledged !
+Nous cherchons 0 et avons recu 408
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 409
+Nous cherchons 0 et avons recu 409
+Rentre dans le affichage de timer ? 0
+----------------> 413
+Ack plus grand que le num de sequence : 411
+Nous cherchons 0 et avons recu 411
+Rentre dans le affichage de timer ? 0
+----------------> 414
+----------------> 415
+Already acknowledged !
+Nous cherchons 0 et avons recu 411
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 413
+Nous cherchons 0 et avons recu 413
+Rentre dans le affichage de timer ? 0
+----------------> 416
+----------------> 417
+Already acknowledged !
+Nous cherchons 0 et avons recu 413
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 414
+Nous cherchons 0 et avons recu 414
+Rentre dans le affichage de timer ? 0
+----------------> 418
+Ack plus grand que le num de sequence : 415
+Nous cherchons 0 et avons recu 415
+Rentre dans le affichage de timer ? 0
+----------------> 419
+Ack plus grand que le num de sequence : 417
+Nous cherchons 0 et avons recu 417
+Rentre dans le affichage de timer ? 0
+----------------> 420
+----------------> 421
+Already acknowledged !
+Nous cherchons 0 et avons recu 417
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 419
+Nous cherchons 0 et avons recu 419
+Rentre dans le affichage de timer ? 0
+----------------> 422
+----------------> 423
+Already acknowledged !
+Nous cherchons 0 et avons recu 419
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 421
+Nous cherchons 0 et avons recu 421
+Rentre dans le affichage de timer ? 0
+----------------> 424
+----------------> 425
+Ack plus grand que le num de sequence : 423
+Nous cherchons 0 et avons recu 423
+Rentre dans le affichage de timer ? 0
+----------------> 426
+----------------> 427
+Already acknowledged !
+Nous cherchons 0 et avons recu 423
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 423
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 424
+Nous cherchons 0 et avons recu 424
+Rentre dans le affichage de timer ? 0
+----------------> 428
+Ack plus grand que le num de sequence : 427
+Nous cherchons 0 et avons recu 427
+Rentre dans le affichage de timer ? 0
+----------------> 429
+----------------> 430
+----------------> 431
+Already acknowledged !
+Nous cherchons 0 et avons recu 427
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 427
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 428
+Nous cherchons 0 et avons recu 428
+Rentre dans le affichage de timer ? 0
+----------------> 432
+Ack plus grand que le num de sequence : 431
+Nous cherchons 0 et avons recu 431
+Rentre dans le affichage de timer ? 0
+----------------> 433
+----------------> 434
+----------------> 435
+Already acknowledged !
+Nous cherchons 0 et avons recu 431
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 431
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 434
+Nous cherchons 0 et avons recu 434
+Rentre dans le affichage de timer ? 0
+----------------> 436
+----------------> 437
+----------------> 438
+Ack plus grand que le num de sequence : 435
+Nous cherchons 0 et avons recu 435
+Rentre dans le affichage de timer ? 0
+----------------> 439
+Already acknowledged !
+Nous cherchons 0 et avons recu 435
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 435
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 436
+Nous cherchons 0 et avons recu 436
+Rentre dans le affichage de timer ? 0
+----------------> 440
+Ack plus grand que le num de sequence : 438
+Nous cherchons 0 et avons recu 438
+Rentre dans le affichage de timer ? 0
+----------------> 441
+----------------> 442
+Ack plus grand que le num de sequence : 439
+Nous cherchons 0 et avons recu 439
+Rentre dans le affichage de timer ? 0
+----------------> 443
+Already acknowledged !
+Nous cherchons 0 et avons recu 439
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 442
+Nous cherchons 0 et avons recu 442
+Rentre dans le affichage de timer ? 0
+----------------> 444
+----------------> 445
+----------------> 446
+Ack plus grand que le num de sequence : 443
+Nous cherchons 0 et avons recu 443
+Rentre dans le affichage de timer ? 0
+----------------> 447
+Already acknowledged !
+Nous cherchons 0 et avons recu 443
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 443
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 447
+Nous cherchons 0 et avons recu 447
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 448
+----------------> 449
+----------------> 450
+----------------> 451
+Already acknowledged !
+Nous cherchons 448 et avons recu 447
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 448 et avons recu 447
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 448 et avons recu 447
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 451
+Nous cherchons 448 et avons recu 451
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0127520561218262
+La valeur du timer est de 12752.056122
+La valeur du timer est de 12752.056122
+----------------> 452
+----------------> 453
+----------------> 454
+----------------> 455
+Already acknowledged !
+Nous cherchons 0 et avons recu 451
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 451
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 451
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 452
+Nous cherchons 0 et avons recu 452
+Rentre dans le affichage de timer ? 0
+----------------> 456
+Ack plus grand que le num de sequence : 453
+Nous cherchons 0 et avons recu 453
+Rentre dans le affichage de timer ? 0
+----------------> 457
+Ack plus grand que le num de sequence : 455
+Nous cherchons 0 et avons recu 455
+Rentre dans le affichage de timer ? 0
+----------------> 458
+----------------> 459
+Already acknowledged !
+Nous cherchons 0 et avons recu 455
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 459
+Nous cherchons 0 et avons recu 459
+Rentre dans le affichage de timer ? 0
+----------------> 460
+----------------> 461
+----------------> 462
+----------------> 463
+Already acknowledged !
+Nous cherchons 0 et avons recu 459
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 459
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 460
+Nous cherchons 0 et avons recu 460
+Rentre dans le affichage de timer ? 0
+----------------> 464
+Ack plus grand que le num de sequence : 462
+Nous cherchons 0 et avons recu 462
+Rentre dans le affichage de timer ? 0
+----------------> 465
+On lance le RTT calculation
+----------------> 466
+Ack plus grand que le num de sequence : 463
+Nous cherchons 466 et avons recu 463
+Rentre dans le affichage de timer ? 0
+----------------> 467
+Already acknowledged !
+Nous cherchons 466 et avons recu 463
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 465
+Nous cherchons 466 et avons recu 465
+Rentre dans le affichage de timer ? 0
+----------------> 468
+----------------> 469
+Already acknowledged !
+Nous cherchons 466 et avons recu 465
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 466
+Nous cherchons 466 et avons recu 466
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0224535465240479
+La valeur du timer est de 22453.546524
+La valeur du timer est de 22453.546524
+On lance le RTT calculation
+----------------> 470
+Ack plus grand que le num de sequence : 467
+Nous cherchons 470 et avons recu 467
+Rentre dans le affichage de timer ? 0
+----------------> 471
+Ack plus grand que le num de sequence : 469
+Nous cherchons 470 et avons recu 469
+Rentre dans le affichage de timer ? 0
+----------------> 472
+----------------> 473
+Already acknowledged !
+Nous cherchons 470 et avons recu 469
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 470
+Nous cherchons 470 et avons recu 470
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0209343433380127
+La valeur du timer est de 20934.343338
+La valeur du timer est de 20934.343338
+----------------> 474
+Ack plus grand que le num de sequence : 472
+Nous cherchons 0 et avons recu 472
+Rentre dans le affichage de timer ? 0
+----------------> 475
+----------------> 476
+Already acknowledged !
+Nous cherchons 0 et avons recu 472
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 473
+Nous cherchons 0 et avons recu 473
+Rentre dans le affichage de timer ? 0
+----------------> 477
+Ack plus grand que le num de sequence : 474
+Nous cherchons 0 et avons recu 474
+Rentre dans le affichage de timer ? 0
+----------------> 478
+Ack plus grand que le num de sequence : 475
+Nous cherchons 0 et avons recu 475
+Rentre dans le affichage de timer ? 0
+----------------> 479
+Ack plus grand que le num de sequence : 477
+Nous cherchons 0 et avons recu 477
+Rentre dans le affichage de timer ? 0
+----------------> 480
+----------------> 481
+Ack plus grand que le num de sequence : 478
+Nous cherchons 0 et avons recu 478
+Rentre dans le affichage de timer ? 0
+----------------> 482
+Already acknowledged !
+Nous cherchons 0 et avons recu 478
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 482
+Nous cherchons 0 et avons recu 482
+Rentre dans le affichage de timer ? 0
+----------------> 483
+----------------> 484
+----------------> 485
+----------------> 486
+Already acknowledged !
+Nous cherchons 0 et avons recu 482
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 482
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 483
+Nous cherchons 0 et avons recu 483
+Rentre dans le affichage de timer ? 0
+----------------> 487
+Already acknowledged !
+Nous cherchons 0 et avons recu 483
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 484
+Nous cherchons 0 et avons recu 484
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 488
+Ack plus grand que le num de sequence : 485
+Nous cherchons 488 et avons recu 485
+Rentre dans le affichage de timer ? 0
+----------------> 489
+Ack plus grand que le num de sequence : 486
+Nous cherchons 488 et avons recu 486
+Rentre dans le affichage de timer ? 0
+----------------> 490
+Ack plus grand que le num de sequence : 487
+Nous cherchons 488 et avons recu 487
+Rentre dans le affichage de timer ? 0
+----------------> 491
+Ack plus grand que le num de sequence : 488
+Nous cherchons 488 et avons recu 488
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0314471721649170
+La valeur du timer est de 31447.172165
+La valeur du timer est de 31447.172165
+----------------> 492
+Ack plus grand que le num de sequence : 490
+Nous cherchons 0 et avons recu 490
+Rentre dans le affichage de timer ? 0
+----------------> 493
+----------------> 494
+Already acknowledged !
+Nous cherchons 0 et avons recu 490
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 491
+Nous cherchons 0 et avons recu 491
+Rentre dans le affichage de timer ? 0
+----------------> 495
+Ack plus grand que le num de sequence : 492
+Nous cherchons 0 et avons recu 492
+Rentre dans le affichage de timer ? 0
+----------------> 496
+Ack plus grand que le num de sequence : 493
+Nous cherchons 0 et avons recu 493
+Rentre dans le affichage de timer ? 0
+----------------> 497
+Ack plus grand que le num de sequence : 495
+Nous cherchons 0 et avons recu 495
+Rentre dans le affichage de timer ? 0
+----------------> 498
+----------------> 499
+Already acknowledged !
+Nous cherchons 0 et avons recu 495
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 496
+Nous cherchons 0 et avons recu 496
+Rentre dans le affichage de timer ? 0
+----------------> 500
+Ack plus grand que le num de sequence : 498
+Nous cherchons 0 et avons recu 498
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 501
+----------------> 502
+Already acknowledged !
+Nous cherchons 501 et avons recu 498
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 499
+Nous cherchons 501 et avons recu 499
+Rentre dans le affichage de timer ? 0
+----------------> 503
+Ack plus grand que le num de sequence : 500
+Nous cherchons 501 et avons recu 500
+Rentre dans le affichage de timer ? 0
+----------------> 504
+Ack plus grand que le num de sequence : 501
+Nous cherchons 501 et avons recu 501
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0375840663909912
+La valeur du timer est de 37584.066391
+La valeur du timer est de 37584.066391
+On lance le RTT calculation
+----------------> 505
+Ack plus grand que le num de sequence : 502
+Nous cherchons 505 et avons recu 502
+Rentre dans le affichage de timer ? 0
+----------------> 506
+Ack plus grand que le num de sequence : 504
+Nous cherchons 505 et avons recu 504
+Rentre dans le affichage de timer ? 0
+----------------> 507
+----------------> 508
+Already acknowledged !
+Nous cherchons 505 et avons recu 504
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 505
+Nous cherchons 505 et avons recu 505
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0217998027801514
+La valeur du timer est de 21799.802780
+La valeur du timer est de 21799.802780
+----------------> 509
+Ack plus grand que le num de sequence : 506
+Nous cherchons 0 et avons recu 506
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 510
+Ack plus grand que le num de sequence : 507
+Nous cherchons 510 et avons recu 507
+Rentre dans le affichage de timer ? 0
+On lance le RTT calculation
+----------------> 511
+Ack plus grand que le num de sequence : 508
+Nous cherchons 511 et avons recu 508
+Rentre dans le affichage de timer ? 0
+----------------> 512
+Ack plus grand que le num de sequence : 510
+Nous cherchons 511 et avons recu 510
+Rentre dans le affichage de timer ? 0
+----------------> 513
+----------------> 514
+Ack plus grand que le num de sequence : 512
+Nous cherchons 511 et avons recu 512
+Rentre dans le affichage de timer ? 1
+Time RTT = 0.0226094722747803
+La valeur du timer est de 22609.472275
+La valeur du timer est de 22609.472275
+----------------> 515
+----------------> 516
+Already acknowledged !
+Nous cherchons 0 et avons recu 512
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 513
+Nous cherchons 0 et avons recu 513
+Rentre dans le affichage de timer ? 0
+----------------> 517
+Ack plus grand que le num de sequence : 516
+Nous cherchons 0 et avons recu 516
+Rentre dans le affichage de timer ? 0
+----------------> 518
+----------------> 519
+----------------> 520
+Already acknowledged !
+Nous cherchons 0 et avons recu 516
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 516
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 519
+Nous cherchons 0 et avons recu 519
+Rentre dans le affichage de timer ? 0
+----------------> 521
+----------------> 522
+----------------> 523
+Already acknowledged !
+Nous cherchons 0 et avons recu 519
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 520
+Nous cherchons 0 et avons recu 520
+Rentre dans le affichage de timer ? 0
+----------------> 524
+Already acknowledged !
+Nous cherchons 0 et avons recu 520
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 523
+Nous cherchons 0 et avons recu 523
+Rentre dans le affichage de timer ? 0
+----------------> 525
+----------------> 526
+----------------> 527
+Ack plus grand que le num de sequence : 524
+Nous cherchons 0 et avons recu 524
+Rentre dans le affichage de timer ? 0
+----------------> 528
+Already acknowledged !
+Nous cherchons 0 et avons recu 524
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 524
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 527
+Nous cherchons 0 et avons recu 527
+Rentre dans le affichage de timer ? 0
+----------------> 529
+----------------> 530
+----------------> 531
+Already acknowledged !
+Nous cherchons 0 et avons recu 527
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 527
+Rentre dans le affichage de timer ? 0
+Ack plus grand que le num de sequence : 528
+Nous cherchons 0 et avons recu 528
+Rentre dans le affichage de timer ? 0
+----------------> 532
+Ack plus grand que le num de sequence : 531
+Nous cherchons 0 et avons recu 531
+Rentre dans le affichage de timer ? 0
+----------------> 533
+----------------> 534
+----------------> 535
+Already acknowledged !
+Nous cherchons 0 et avons recu 531
+Rentre dans le affichage de timer ? 0
+Already acknowledged !
+Nous cherchons 0 et avons recu 531
+Rentre dans le affichage 

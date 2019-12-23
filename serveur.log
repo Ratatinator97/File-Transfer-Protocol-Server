@@ -1,0 +1,3076 @@
+5050
+JE SUIS LE PERE - 172119
+WAITING FOR SYN
+SYN COMING
+Waiting for ACK...
+ACK received, connection
+JE SUIS LE FILS - 172121 DU PERE  172119
+
+Le fichier lu a une taille de 817530 octets
+Le fichier lu est decoupe en 548 envois
+TIMEOUT
+---> 1
+---> 2
+---> 3
+---> 4
+Ack plus grand que le num de sequence : 1
+TIMEOUT
+---> 2
+---> 3
+---> 4
+---> 5
+Ack plus grand que le num de sequence : 4
+----------------> 7
+----------------> 8
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 5
+----------------> 9
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+TIMEOUT
+---> 6
+---> 7
+---> 8
+---> 9
+TIMEOUT
+---> 6
+---> 7
+---> 8
+---> 9
+Ack plus grand que le num de sequence : 9
+----------------> 11
+----------------> 12
+----------------> 13
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 10
+---> 11
+---> 12
+---> 13
+TIMEOUT
+---> 10
+---> 11
+---> 12
+---> 13
+Ack plus grand que le num de sequence : 13
+----------------> 15
+----------------> 16
+----------------> 17
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 14
+---> 15
+---> 16
+---> 17
+TIMEOUT
+---> 14
+---> 15
+---> 16
+---> 17
+TIMEOUT
+---> 14
+---> 15
+---> 16
+---> 17
+Ack plus grand que le num de sequence : 17
+----------------> 19
+----------------> 20
+----------------> 21
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 18
+---> 19
+---> 20
+---> 21
+TIMEOUT
+---> 18
+---> 19
+---> 20
+---> 21
+Ack plus grand que le num de sequence : 21
+----------------> 23
+----------------> 24
+----------------> 25
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 22
+---> 23
+---> 24
+---> 25
+Ack == Numero de seq
+TIMEOUT
+---> 22
+---> 23
+---> 24
+---> 25
+Ack plus grand que le num de sequence : 25
+----------------> 27
+----------------> 28
+----------------> 29
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 26
+---> 27
+---> 28
+---> 29
+TIMEOUT
+---> 26
+---> 27
+---> 28
+---> 29
+Ack plus grand que le num de sequence : 29
+----------------> 31
+----------------> 32
+----------------> 33
+TIMEOUT
+---> 30
+---> 31
+---> 32
+---> 33
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 33
+----------------> 35
+----------------> 36
+----------------> 37
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 34
+---> 35
+---> 36
+---> 37
+Ack plus grand que le num de sequence : 37
+----------------> 39
+----------------> 40
+----------------> 41
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 38
+---> 39
+---> 40
+---> 41
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 41
+----------------> 43
+----------------> 44
+----------------> 45
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 42
+---> 43
+---> 44
+---> 45
+TIMEOUT
+---> 42
+---> 43
+---> 44
+---> 45
+Ack plus grand que le num de sequence : 45
+----------------> 47
+----------------> 48
+----------------> 49
+Already acknowledged !
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 46
+---> 47
+---> 48
+---> 49
+TIMEOUT
+---> 46
+---> 47
+---> 48
+---> 49
+Ack plus grand que le num de sequence : 49
+----------------> 51
+----------------> 52
+----------------> 53
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 50
+---> 51
+---> 52
+---> 53
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 53
+----------------> 55
+----------------> 56
+----------------> 57
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 54
+---> 55
+---> 56
+---> 57
+TIMEOUT
+---> 54
+---> 55
+---> 56
+---> 57
+TIMEOUT
+---> 54
+---> 55
+---> 56
+---> 57
+Ack plus grand que le num de sequence : 57
+----------------> 59
+----------------> 60
+----------------> 61
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 58
+---> 59
+---> 60
+---> 61
+TIMEOUT
+---> 58
+---> 59
+---> 60
+---> 61
+Ack plus grand que le num de sequence : 61
+----------------> 63
+----------------> 64
+----------------> 65
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 62
+---> 63
+---> 64
+---> 65
+TIMEOUT
+---> 62
+---> 63
+---> 64
+---> 65
+Ack plus grand que le num de sequence : 65
+----------------> 67
+----------------> 68
+----------------> 69
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 66
+---> 67
+---> 68
+---> 69
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 69
+----------------> 71
+----------------> 72
+----------------> 73
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 70
+---> 71
+---> 72
+---> 73
+TIMEOUT
+---> 70
+---> 71
+---> 72
+---> 73
+Ack plus grand que le num de sequence : 73
+----------------> 75
+----------------> 76
+----------------> 77
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 74
+---> 75
+---> 76
+---> 77
+TIMEOUT
+---> 74
+---> 75
+---> 76
+---> 77
+Ack plus grand que le num de sequence : 77
+----------------> 79
+----------------> 80
+----------------> 81
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 78
+---> 79
+---> 80
+---> 81
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 81
+----------------> 83
+----------------> 84
+----------------> 85
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 82
+---> 83
+---> 84
+---> 85
+TIMEOUT
+---> 82
+---> 83
+---> 84
+---> 85
+TIMEOUT
+---> 82
+---> 83
+---> 84
+---> 85
+Ack plus grand que le num de sequence : 85
+----------------> 87
+----------------> 88
+----------------> 89
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 86
+---> 87
+---> 88
+---> 89
+TIMEOUT
+---> 86
+---> 87
+---> 88
+---> 89
+Ack plus grand que le num de sequence : 89
+----------------> 91
+----------------> 92
+----------------> 93
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 90
+---> 91
+---> 92
+---> 93
+TIMEOUT
+---> 90
+---> 91
+---> 92
+---> 93
+Ack plus grand que le num de sequence : 93
+----------------> 95
+----------------> 96
+----------------> 97
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 94
+---> 95
+---> 96
+---> 97
+TIMEOUT
+---> 94
+---> 95
+---> 96
+---> 97
+TIMEOUT
+---> 94
+---> 95
+---> 96
+---> 97
+Ack plus grand que le num de sequence : 97
+----------------> 99
+----------------> 100
+----------------> 101
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 98
+---> 99
+---> 100
+---> 101
+TIMEOUT
+---> 98
+---> 99
+---> 100
+---> 101
+Ack plus grand que le num de sequence : 101
+----------------> 103
+----------------> 104
+----------------> 105
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 102
+---> 103
+---> 104
+---> 105
+TIMEOUT
+---> 102
+---> 103
+---> 104
+---> 105
+Ack plus grand que le num de sequence : 105
+----------------> 107
+----------------> 108
+----------------> 109
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 106
+---> 107
+---> 108
+---> 109
+TIMEOUT
+---> 106
+---> 107
+---> 108
+---> 109
+Ack plus grand que le num de sequence : 109
+----------------> 111
+----------------> 112
+----------------> 113
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 110
+---> 111
+---> 112
+---> 113
+Ack plus grand que le num de sequence : 113
+----------------> 115
+----------------> 116
+----------------> 117
+TIMEOUT
+---> 114
+---> 115
+---> 116
+---> 117
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 117
+----------------> 119
+----------------> 120
+----------------> 121
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 118
+---> 119
+---> 120
+---> 121
+Ack == Numero de seq
+TIMEOUT
+---> 118
+---> 119
+---> 120
+---> 121
+TIMEOUT
+---> 118
+---> 119
+---> 120
+---> 121
+Ack plus grand que le num de sequence : 121
+----------------> 123
+----------------> 124
+----------------> 125
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 122
+---> 123
+---> 124
+---> 125
+TIMEOUT
+---> 122
+---> 123
+---> 124
+---> 125
+Ack plus grand que le num de sequence : 125
+----------------> 127
+----------------> 128
+----------------> 129
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 126
+---> 127
+---> 128
+---> 129
+TIMEOUT
+---> 126
+---> 127
+---> 128
+---> 129
+Ack plus grand que le num de sequence : 129
+----------------> 131
+----------------> 132
+----------------> 133
+TIMEOUT
+---> 130
+---> 131
+---> 132
+---> 133
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 133
+----------------> 135
+----------------> 136
+----------------> 137
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+TIMEOUT
+---> 134
+---> 135
+---> 136
+---> 137
+Ack == Numero de seq
+TIMEOUT
+---> 134
+---> 135
+---> 136
+---> 137
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 137
+----------------> 139
+----------------> 140
+----------------> 141
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 138
+---> 139
+---> 140
+---> 141
+TIMEOUT
+---> 138
+---> 139
+---> 140
+---> 141
+Ack plus grand que le num de sequence : 141
+----------------> 143
+----------------> 144
+----------------> 145
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 142
+---> 143
+---> 144
+---> 145
+TIMEOUT
+---> 142
+---> 143
+---> 144
+---> 145
+Ack plus grand que le num de sequence : 145
+----------------> 147
+----------------> 148
+----------------> 149
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 146
+---> 147
+---> 148
+---> 149
+TIMEOUT
+---> 146
+---> 147
+---> 148
+---> 149
+Ack plus grand que le num de sequence : 149
+----------------> 151
+----------------> 152
+----------------> 153
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 150
+---> 151
+---> 152
+---> 153
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 153
+----------------> 155
+----------------> 156
+----------------> 157
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 154
+---> 155
+---> 156
+---> 157
+TIMEOUT
+---> 154
+---> 155
+---> 156
+---> 157
+TIMEOUT
+---> 154
+---> 155
+---> 156
+---> 157
+Ack plus grand que le num de sequence : 157
+----------------> 159
+----------------> 160
+----------------> 161
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 158
+---> 159
+---> 160
+---> 161
+TIMEOUT
+---> 158
+---> 159
+---> 160
+---> 161
+Ack plus grand que le num de sequence : 161
+----------------> 163
+----------------> 164
+----------------> 165
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 162
+---> 163
+---> 164
+---> 165
+TIMEOUT
+---> 162
+---> 163
+---> 164
+---> 165
+Ack plus grand que le num de sequence : 165
+----------------> 167
+----------------> 168
+----------------> 169
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 166
+---> 167
+---> 168
+---> 169
+TIMEOUT
+---> 166
+---> 167
+---> 168
+---> 169
+TIMEOUT
+---> 166
+---> 167
+---> 168
+---> 169
+Ack plus grand que le num de sequence : 169
+----------------> 171
+----------------> 172
+----------------> 173
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 170
+---> 171
+---> 172
+---> 173
+TIMEOUT
+---> 170
+---> 171
+---> 172
+---> 173
+Ack plus grand que le num de sequence : 173
+----------------> 175
+----------------> 176
+----------------> 177
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 174
+---> 175
+---> 176
+---> 177
+TIMEOUT
+---> 174
+---> 175
+---> 176
+---> 177
+Ack plus grand que le num de sequence : 177
+----------------> 179
+----------------> 180
+----------------> 181
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 178
+---> 179
+---> 180
+---> 181
+Ack == Numero de seq
+TIMEOUT
+---> 178
+---> 179
+---> 180
+---> 181
+Ack plus grand que le num de sequence : 181
+----------------> 183
+----------------> 184
+----------------> 185
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 182
+---> 183
+---> 184
+---> 185
+TIMEOUT
+---> 182
+---> 183
+---> 184
+---> 185
+Ack plus grand que le num de sequence : 185
+----------------> 187
+----------------> 188
+----------------> 189
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 186
+---> 187
+---> 188
+---> 189
+Ack == Numero de seq
+TIMEOUT
+---> 186
+---> 187
+---> 188
+---> 189
+TIMEOUT
+---> 186
+---> 187
+---> 188
+---> 189
+Ack plus grand que le num de sequence : 189
+----------------> 191
+----------------> 192
+----------------> 193
+Ack == Numero de seq
+TIMEOUT
+---> 190
+---> 191
+---> 192
+---> 193
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 193
+----------------> 195
+----------------> 196
+----------------> 197
+Ack == Numero de seq
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Already acknowledged !
+Already acknowledged !
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 194
+---> 195
+---> 196
+---> 197
+TIMEOUT
+---> 194
+---> 195
+---> 196
+---> 197
+Ack plus grand que le num de sequence : 197
+----------------> 199
+----------------> 200
+----------------> 201
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 198
+---> 199
+---> 200
+---> 201
+TIMEOUT
+---> 198
+---> 199
+---> 200
+---> 201
+Ack plus grand que le num de sequence : 201
+----------------> 203
+----------------> 204
+----------------> 205
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 202
+---> 203
+---> 204
+---> 205
+TIMEOUT
+---> 202
+---> 203
+---> 204
+---> 205
+Ack plus grand que le num de sequence : 205
+----------------> 207
+----------------> 208
+----------------> 209
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 206
+---> 207
+---> 208
+---> 209
+TIMEOUT
+---> 206
+---> 207
+---> 208
+---> 209
+Ack plus grand que le num de sequence : 209
+----------------> 211
+----------------> 212
+----------------> 213
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 210
+---> 211
+---> 212
+---> 213
+TIMEOUT
+---> 210
+---> 211
+---> 212
+---> 213
+Ack plus grand que le num de sequence : 213
+----------------> 215
+----------------> 216
+----------------> 217
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 214
+---> 215
+---> 216
+---> 217
+TIMEOUT
+---> 214
+---> 215
+---> 216
+---> 217
+TIMEOUT
+---> 214
+---> 215
+---> 216
+---> 217
+Ack plus grand que le num de sequence : 217
+----------------> 219
+----------------> 220
+----------------> 221
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 218
+---> 219
+---> 220
+---> 221
+TIMEOUT
+---> 218
+---> 219
+---> 220
+---> 221
+Ack plus grand que le num de sequence : 221
+----------------> 223
+----------------> 224
+----------------> 225
+TIMEOUT
+---> 222
+---> 223
+---> 224
+---> 225
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 225
+----------------> 227
+----------------> 228
+----------------> 229
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 226
+---> 227
+---> 228
+---> 229
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 226
+---> 227
+---> 228
+---> 229
+Ack plus grand que le num de sequence : 229
+----------------> 231
+----------------> 232
+----------------> 233
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 230
+---> 231
+---> 232
+---> 233
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 233
+----------------> 235
+----------------> 236
+----------------> 237
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 234
+---> 235
+---> 236
+---> 237
+TIMEOUT
+---> 234
+---> 235
+---> 236
+---> 237
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 237
+----------------> 239
+----------------> 240
+----------------> 241
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 238
+---> 239
+---> 240
+---> 241
+TIMEOUT
+---> 238
+---> 239
+---> 240
+---> 241
+Ack plus grand que le num de sequence : 241
+----------------> 243
+----------------> 244
+----------------> 245
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 242
+---> 243
+---> 244
+---> 245
+TIMEOUT
+---> 242
+---> 243
+---> 244
+---> 245
+Ack plus grand que le num de sequence : 245
+----------------> 247
+----------------> 248
+----------------> 249
+Ack == Numero de seq
+TIMEOUT
+---> 246
+---> 247
+---> 248
+---> 249
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 249
+----------------> 251
+----------------> 252
+----------------> 253
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 250
+---> 251
+---> 252
+---> 253
+Ack == Numero de seq
+TIMEOUT
+---> 250
+---> 251
+---> 252
+---> 253
+Ack plus grand que le num de sequence : 253
+----------------> 255
+----------------> 256
+----------------> 257
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 254
+---> 255
+---> 256
+---> 257
+TIMEOUT
+---> 254
+---> 255
+---> 256
+---> 257
+Ack plus grand que le num de sequence : 257
+----------------> 259
+----------------> 260
+----------------> 261
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 258
+---> 259
+---> 260
+---> 261
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 258
+---> 259
+---> 260
+---> 261
+Ack plus grand que le num de sequence : 261
+----------------> 263
+----------------> 264
+----------------> 265
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 262
+---> 263
+---> 264
+---> 265
+TIMEOUT
+---> 262
+---> 263
+---> 264
+---> 265
+Ack plus grand que le num de sequence : 265
+----------------> 267
+----------------> 268
+----------------> 269
+Ack == Numero de seq
+TIMEOUT
+---> 266
+---> 267
+---> 268
+---> 269
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 269
+----------------> 271
+----------------> 272
+----------------> 273
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+TIMEOUT
+---> 270
+---> 271
+---> 272
+---> 273
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 270
+---> 271
+---> 272
+---> 273
+Ack plus grand que le num de sequence : 273
+----------------> 275
+----------------> 276
+----------------> 277
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 274
+---> 275
+---> 276
+---> 277
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 277
+----------------> 279
+----------------> 280
+----------------> 281
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 278
+---> 279
+---> 280
+---> 281
+TIMEOUT
+---> 278
+---> 279
+---> 280
+---> 281
+Ack plus grand que le num de sequence : 281
+----------------> 283
+----------------> 284
+----------------> 285
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 282
+---> 283
+---> 284
+---> 285
+Ack plus grand que le num de sequence : 285
+----------------> 287
+----------------> 288
+----------------> 289
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 286
+---> 287
+---> 288
+---> 289
+TIMEOUT
+---> 286
+---> 287
+---> 288
+---> 289
+Ack plus grand que le num de sequence : 289
+----------------> 291
+----------------> 292
+----------------> 293
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 290
+---> 291
+---> 292
+---> 293
+TIMEOUT
+---> 290
+---> 291
+---> 292
+---> 293
+TIMEOUT
+---> 290
+---> 291
+---> 292
+---> 293
+Ack plus grand que le num de sequence : 293
+----------------> 295
+----------------> 296
+----------------> 297
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 294
+---> 295
+---> 296
+---> 297
+TIMEOUT
+---> 294
+---> 295
+---> 296
+---> 297
+Ack plus grand que le num de sequence : 297
+----------------> 299
+----------------> 300
+----------------> 301
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 298
+---> 299
+---> 300
+---> 301
+TIMEOUT
+---> 298
+---> 299
+---> 300
+---> 301
+Ack plus grand que le num de sequence : 301
+----------------> 303
+----------------> 304
+----------------> 305
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 302
+---> 303
+---> 304
+---> 305
+TIMEOUT
+---> 302
+---> 303
+---> 304
+---> 305
+Ack plus grand que le num de sequence : 305
+----------------> 307
+----------------> 308
+----------------> 309
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 306
+---> 307
+---> 308
+---> 309
+TIMEOUT
+---> 306
+---> 307
+---> 308
+---> 309
+TIMEOUT
+---> 306
+---> 307
+---> 308
+---> 309
+Ack plus grand que le num de sequence : 309
+----------------> 311
+----------------> 312
+----------------> 313
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 310
+---> 311
+---> 312
+---> 313
+TIMEOUT
+---> 310
+---> 311
+---> 312
+---> 313
+Ack plus grand que le num de sequence : 313
+----------------> 315
+----------------> 316
+----------------> 317
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 314
+---> 315
+---> 316
+---> 317
+Ack == Numero de seq
+TIMEOUT
+---> 314
+---> 315
+---> 316
+---> 317
+Ack plus grand que le num de sequence : 317
+----------------> 319
+----------------> 320
+----------------> 321
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 318
+---> 319
+---> 320
+---> 321
+Ack plus grand que le num de sequence : 321
+----------------> 323
+----------------> 324
+----------------> 325
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 322
+---> 323
+---> 324
+---> 325
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 325
+----------------> 327
+----------------> 328
+----------------> 329
+TIMEOUT
+---> 326
+---> 327
+---> 328
+---> 329
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 326
+---> 327
+---> 328
+---> 329
+Ack plus grand que le num de sequence : 329
+----------------> 331
+----------------> 332
+----------------> 333
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 330
+---> 331
+---> 332
+---> 333
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 333
+----------------> 335
+----------------> 336
+----------------> 337
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 334
+---> 335
+---> 336
+---> 337
+TIMEOUT
+---> 334
+---> 335
+---> 336
+---> 337
+Ack plus grand que le num de sequence : 337
+----------------> 339
+----------------> 340
+----------------> 341
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 338
+---> 339
+---> 340
+---> 341
+Ack == Numero de seq
+TIMEOUT
+---> 338
+---> 339
+---> 340
+---> 341
+TIMEOUT
+---> 338
+---> 339
+---> 340
+---> 341
+Ack plus grand que le num de sequence : 341
+----------------> 343
+----------------> 344
+----------------> 345
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 342
+---> 343
+---> 344
+---> 345
+TIMEOUT
+---> 342
+---> 343
+---> 344
+---> 345
+Ack plus grand que le num de sequence : 345
+----------------> 347
+----------------> 348
+----------------> 349
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 346
+---> 347
+---> 348
+---> 349
+TIMEOUT
+---> 346
+---> 347
+---> 348
+---> 349
+Ack plus grand que le num de sequence : 349
+----------------> 351
+----------------> 352
+----------------> 353
+Ack == Numero de seq
+TIMEOUT
+---> 350
+---> 351
+---> 352
+---> 353
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 353
+----------------> 355
+----------------> 356
+----------------> 357
+Already acknowledged !
+Ack == Numero de seq
+TIMEOUT
+---> 354
+---> 355
+---> 356
+---> 357
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 354
+---> 355
+---> 356
+---> 357
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 357
+----------------> 359
+----------------> 360
+----------------> 361
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 358
+---> 359
+---> 360
+---> 361
+TIMEOUT
+---> 358
+---> 359
+---> 360
+---> 361
+Ack plus grand que le num de sequence : 361
+----------------> 363
+----------------> 364
+----------------> 365
+Ack == Numero de seq
+TIMEOUT
+---> 362
+---> 363
+---> 364
+---> 365
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 365
+----------------> 367
+----------------> 368
+----------------> 369
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 366
+---> 367
+---> 368
+---> 369
+TIMEOUT
+---> 366
+---> 367
+---> 368
+---> 369
+Ack plus grand que le num de sequence : 369
+----------------> 371
+----------------> 372
+----------------> 373
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 370
+---> 371
+---> 372
+---> 373
+TIMEOUT
+---> 370
+---> 371
+---> 372
+---> 373
+Ack plus grand que le num de sequence : 373
+----------------> 375
+----------------> 376
+----------------> 377
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 374
+---> 375
+---> 376
+---> 377
+TIMEOUT
+---> 374
+---> 375
+---> 376
+---> 377
+Ack plus grand que le num de sequence : 377
+----------------> 379
+----------------> 380
+----------------> 381
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 378
+---> 379
+---> 380
+---> 381
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 378
+---> 379
+---> 380
+---> 381
+Ack plus grand que le num de sequence : 381
+----------------> 383
+----------------> 384
+----------------> 385
+Ack == Numero de seq
+TIMEOUT
+---> 382
+---> 383
+---> 384
+---> 385
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 385
+----------------> 387
+----------------> 388
+----------------> 389
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+TIMEOUT
+---> 386
+---> 387
+---> 388
+---> 389
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 386
+---> 387
+---> 388
+---> 389
+Ack plus grand que le num de sequence : 389
+----------------> 391
+----------------> 392
+----------------> 393
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 390
+---> 391
+---> 392
+---> 393
+TIMEOUT
+---> 390
+---> 391
+---> 392
+---> 393
+Ack plus grand que le num de sequence : 393
+----------------> 395
+----------------> 396
+----------------> 397
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 394
+---> 395
+---> 396
+---> 397
+TIMEOUT
+---> 394
+---> 395
+---> 396
+---> 397
+Ack plus grand que le num de sequence : 397
+----------------> 399
+----------------> 400
+----------------> 401
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 398
+---> 399
+---> 400
+---> 401
+TIMEOUT
+---> 398
+---> 399
+---> 400
+---> 401
+Ack plus grand que le num de sequence : 401
+----------------> 403
+----------------> 404
+----------------> 405
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 402
+---> 403
+---> 404
+---> 405
+TIMEOUT
+---> 402
+---> 403
+---> 404
+---> 405
+Ack plus grand que le num de sequence : 405
+----------------> 407
+----------------> 408
+----------------> 409
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 406
+---> 407
+---> 408
+---> 409
+TIMEOUT
+---> 406
+---> 407
+---> 408
+---> 409
+Ack plus grand que le num de sequence : 409
+----------------> 411
+----------------> 412
+----------------> 413
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 410
+---> 411
+---> 412
+---> 413
+TIMEOUT
+---> 410
+---> 411
+---> 412
+---> 413
+TIMEOUT
+---> 410
+---> 411
+---> 412
+---> 413
+Ack plus grand que le num de sequence : 413
+----------------> 415
+----------------> 416
+----------------> 417
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 414
+---> 415
+---> 416
+---> 417
+Ack plus grand que le num de sequence : 417
+----------------> 419
+----------------> 420
+----------------> 421
+TIMEOUT
+---> 418
+---> 419
+---> 420
+---> 421
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 421
+----------------> 423
+----------------> 424
+----------------> 425
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 422
+---> 423
+---> 424
+---> 425
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 425
+----------------> 427
+----------------> 428
+----------------> 429
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 426
+---> 427
+---> 428
+---> 429
+TIMEOUT
+---> 426
+---> 427
+---> 428
+---> 429
+Ack plus grand que le num de sequence : 429
+----------------> 431
+----------------> 432
+----------------> 433
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 430
+---> 431
+---> 432
+---> 433
+TIMEOUT
+---> 430
+---> 431
+---> 432
+---> 433
+Ack plus grand que le num de sequence : 433
+----------------> 435
+----------------> 436
+----------------> 437
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 434
+---> 435
+---> 436
+---> 437
+TIMEOUT
+---> 434
+---> 435
+---> 436
+---> 437
+Ack plus grand que le num de sequence : 437
+----------------> 439
+----------------> 440
+----------------> 441
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 438
+---> 439
+---> 440
+---> 441
+TIMEOUT
+---> 438
+---> 439
+---> 440
+---> 441
+Ack plus grand que le num de sequence : 441
+----------------> 443
+----------------> 444
+----------------> 445
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 442
+---> 443
+---> 444
+---> 445
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 442
+---> 443
+---> 444
+---> 445
+Ack plus grand que le num de sequence : 445
+----------------> 447
+----------------> 448
+----------------> 449
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 446
+---> 447
+---> 448
+---> 449
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 449
+----------------> 451
+----------------> 452
+----------------> 453
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 450
+---> 451
+---> 452
+---> 453
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 453
+----------------> 455
+----------------> 456
+----------------> 457
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 454
+---> 455
+---> 456
+---> 457
+Ack == Numero de seq
+TIMEOUT
+---> 454
+---> 455
+---> 456
+---> 457
+Ack plus grand que le num de sequence : 457
+----------------> 459
+----------------> 460
+----------------> 461
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 458
+---> 459
+---> 460
+---> 461
+TIMEOUT
+---> 458
+---> 459
+---> 460
+---> 461
+TIMEOUT
+---> 458
+---> 459
+---> 460
+---> 461
+Ack plus grand que le num de sequence : 461
+----------------> 463
+----------------> 464
+----------------> 465
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 462
+---> 463
+---> 464
+---> 465
+Ack plus grand que le num de sequence : 465
+----------------> 467
+----------------> 468
+----------------> 469
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 466
+---> 467
+---> 468
+---> 469
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 469
+----------------> 471
+----------------> 472
+----------------> 473
+Ack == Numero de seq
+TIMEOUT
+---> 470
+---> 471
+---> 472
+---> 473
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 470
+---> 471
+---> 472
+---> 473
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 473
+----------------> 475
+----------------> 476
+----------------> 477
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 474
+---> 475
+---> 476
+---> 477
+TIMEOUT
+---> 474
+---> 475
+---> 476
+---> 477
+Ack plus grand que le num de sequence : 477
+----------------> 479
+----------------> 480
+----------------> 481
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 478
+---> 479
+---> 480
+---> 481
+TIMEOUT
+---> 478
+---> 479
+---> 480
+---> 481
+Ack plus grand que le num de sequence : 481
+----------------> 483
+----------------> 484
+----------------> 485
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 482
+---> 483
+---> 484
+---> 485
+Ack plus grand que le num de sequence : 485
+----------------> 487
+----------------> 488
+----------------> 489
+Ack == Numero de seq
+TIMEOUT
+---> 486
+---> 487
+---> 488
+---> 489
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 489
+----------------> 491
+----------------> 492
+----------------> 493
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 490
+---> 491
+---> 492
+---> 493
+TIMEOUT
+---> 490
+---> 491
+---> 492
+---> 493
+Ack plus grand que le num de sequence : 493
+----------------> 495
+----------------> 496
+----------------> 497
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 494
+---> 495
+---> 496
+---> 497
+TIMEOUT
+---> 494
+---> 495
+---> 496
+---> 497
+Ack plus grand que le num de sequence : 497
+----------------> 499
+----------------> 500
+----------------> 501
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 498
+---> 499
+---> 500
+---> 501
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 501
+----------------> 503
+----------------> 504
+----------------> 505
+Ack == Numero de seq
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 502
+---> 503
+---> 504
+---> 505
+Ack plus grand que le num de sequence : 505
+----------------> 507
+----------------> 508
+----------------> 509
+Ack == Numero de seq
+TIMEOUT
+---> 506
+---> 507
+---> 508
+---> 509
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 509
+----------------> 511
+----------------> 512
+----------------> 513
+Already acknowledged !
+Ack == Numero de seq
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 510
+---> 511
+---> 512
+---> 513
+TIMEOUT
+---> 510
+---> 511
+---> 512
+---> 513
+Ack plus grand que le num de sequence : 513
+----------------> 515
+----------------> 516
+----------------> 517
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 514
+---> 515
+---> 516
+---> 517
+TIMEOUT
+---> 514
+---> 515
+---> 516
+---> 517
+Ack plus grand que le num de sequence : 517
+----------------> 519
+----------------> 520
+----------------> 521
+Ack == Numero de seq
+TIMEOUT
+---> 518
+---> 519
+---> 520
+---> 521
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 521
+----------------> 523
+----------------> 524
+----------------> 525
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 522
+---> 523
+---> 524
+---> 525
+TIMEOUT
+---> 522
+---> 523
+---> 524
+---> 525
+TIMEOUT
+---> 522
+---> 523
+---> 524
+---> 525
+Ack plus grand que le num de sequence : 525
+----------------> 527
+----------------> 528
+----------------> 529
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 526
+---> 527
+---> 528
+---> 529
+TIMEOUT
+---> 526
+---> 527
+---> 528
+---> 529
+Ack plus grand que le num de sequence : 529
+----------------> 531
+----------------> 532
+----------------> 533
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 530
+---> 531
+---> 532
+---> 533
+TIMEOUT
+---> 530
+---> 531
+---> 532
+---> 533
+Ack plus grand que le num de sequence : 533
+----------------> 535
+----------------> 536
+----------------> 537
+Ack == Numero de seq
+TIMEOUT
+---> 534
+---> 535
+---> 536
+---> 537
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack plus grand que le num de sequence : 537
+----------------> 539
+----------------> 540
+----------------> 541
+Already acknowledged !
+Already acknowledged !
+Already acknowledged !
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 538
+---> 539
+---> 540
+---> 541
+TIMEOUT
+---> 538
+---> 539
+---> 540
+---> 541
+Ack plus grand que le num de sequence : 541
+----------------> 543
+----------------> 544
+----------------> 545
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 542
+---> 543
+---> 544
+---> 545
+TIMEOUT
+---> 542
+---> 543
+---> 544
+---> 545
+Ack plus grand que le num de sequence : 545
+----------------> 547
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+Ack == Numero de seq
+TIMEOUT
+---> 546
+---> 547
+---> 548
+---> 549
+TIMEOUT
+---> 546
+---> 547
+---> 548
+---> 549
+Ack plus grand que le num de sequence : 548
+Final ack done for 172121 .
+time taken 6.112901
+Taille: 817530
+Temps: 6.112901
+DEBIT : 133.738464 Ko
