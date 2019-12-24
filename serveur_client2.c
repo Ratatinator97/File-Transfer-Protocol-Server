@@ -30,15 +30,15 @@ int main (int argc, char *argv[]) {
 
     char buffer[RCVSIZE];
 
-    if(argc > 2){
+    if(argc > 3){
         //printf("Too many arguments\n");
         exit(0);
     }
-    if(argc < 2){
+    if(argc < 3){
         //printf("Argument expected\n");
         exit(0);
     }
-    if(argc == 2){
+    if(argc == 3){
         port_syn = atoi(argv[1]);
         //printf("%d\n",port_syn);
     }
@@ -132,7 +132,8 @@ int main (int argc, char *argv[]) {
     FILE* fichier;
 
     timeout.tv_sec=0;
-    timeout.tv_usec=20000;
+    timeout.tv_usec=htons(atoi(argv[2]));
+    printf("Valeur du timeout : %d\n",atoi(argv[2]));
     setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
     //printf("Valeur du timeout initial : %f\n",timeout.tv_usec);
     //printf("WAITING FOR MESSAGE\n");
@@ -178,12 +179,13 @@ int main (int argc, char *argv[]) {
 
     int num_seq=1;
     int num_seq_ack=0;
-    int taille_window=16;
+    int taille_window=8;
     int window[taille_window];
     double time_rtt;
     int numseq_rtt;
     double time = give_time();
     double time_in_us;
+    int nb_timeout=0;
 
     //printf("Initialisation\n");
     for(int i=0;i< taille_window;i++){
@@ -216,16 +218,19 @@ int main (int argc, char *argv[]) {
             time_in_us = time_rtt*1000000;
             
             if((time_rtt < 1000000) && (time_in_us > 1000)){
-                //printf("La valeur du timer est de %f\n",time_in_us);
+                printf("La valeur du timer est de %f\n",time_in_us+2500);
+                /*
                 time_in_us=time_in_us+2500;
                 timeout.tv_usec=time_in_us;
-                setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
+                timeout.tv_sec=0;
+                setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));*/
             }
             
             
             numseq_rtt=0;
         }
         if(n == 0){
+            nb_timeout++;
             ////printf("Timeout recu, envoi de la sequence entiere\n");
             //Si Timeout alors : Refaire le RTT
             num_seq = num_seq_ack+1;
@@ -293,6 +298,7 @@ int main (int argc, char *argv[]) {
     //printf("Taille: %ld\n", length);
     //printf("Temps: %f\n",time_taken);
     printf("%f\n",((float)((float)length/time_taken))/1000);
+    printf("Nb de timeouts%d\n",nb_timeout);
 
     return 0;
 }
@@ -310,7 +316,6 @@ void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
         num_seq_tot[strlen(num_seq_tot)-i]=num_seq_s[strlen(num_seq_s)-i];
     }
     memcpy(buffer_output,num_seq_tot, 6);
-
     sendto(server_socket,(const char*)buffer_output, no_bytes+6 ,MSG_CONFIRM, (struct sockaddr*) client_addr,length);
 
     return;
@@ -338,7 +343,7 @@ int wait_ack(int no_seq, int no_seq_max, int no_bytes, char* buffer_input, char*
         }
     }
     else {
-        //printf("TIMEOUT\n");
+        
     }
 
     return 0;
