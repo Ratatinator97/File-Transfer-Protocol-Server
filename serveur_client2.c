@@ -30,15 +30,15 @@ int main (int argc, char *argv[]) {
 
     char buffer[RCVSIZE];
 
-    if(argc > 3){
+    if(argc > 2){
         //printf("Too many arguments\n");
         exit(0);
     }
-    if(argc < 3){
+    if(argc < 2){
         //printf("Argument expected\n");
         exit(0);
     }
-    if(argc == 3){
+    if(argc == 2){
         port_syn = atoi(argv[1]);
         //printf("%d\n",port_syn);
     }
@@ -132,8 +132,8 @@ int main (int argc, char *argv[]) {
     FILE* fichier;
 
     timeout.tv_sec=0;
-    timeout.tv_usec=htons(atoi(argv[2]));
-    printf("Valeur du timeout : %d\n",atoi(argv[2]));
+    timeout.tv_usec=100000;
+    
     setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
     //printf("Valeur du timeout initial : %f\n",timeout.tv_usec);
     //printf("WAITING FOR MESSAGE\n");
@@ -207,28 +207,28 @@ int main (int argc, char *argv[]) {
     while(num_seq_ack < nb_morceaux){
         int n = wait_ack(num_seq_ack,num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len);
         
-        
         ////printf("Nous cherchons %d et avons recu %d\n",numseq_rtt,n);
         ////printf("Rentre dans le affichage de timer ? %d\n",(numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0));
-        if((numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0)){
-            time_rtt = give_time() - time_rtt;
-            
-            ////printf("Time RTT = %.16f\n",time_rtt);
-            
-            time_in_us = time_rtt*1000000;
-            
-            if((time_rtt < 1000000) && (time_in_us > 1000)){
-                printf("La valeur du timer est de %f\n",time_in_us+2500);
-                /*
-                time_in_us=time_in_us+2500;
-                timeout.tv_usec=time_in_us;
-                timeout.tv_sec=0;
-                setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));*/
-            }
-            
-            
+        if((n > (numseq_rtt+taille_window))&&(n!=0)){
             numseq_rtt=0;
         }
+        if((numseq_rtt == n)&&(n!=0)&&(numseq_rtt != 0)){
+            
+            time_rtt = give_time() - time_rtt;
+            //printf("Hard RTT time is : %f\n",time_rtt);
+            if((time_rtt < 1000000)){
+
+                time_in_us = time_rtt*1000000;
+                //printf("RTT time %f\n",time_in_us);
+                time_in_us=time_in_us+2000;
+                timeout.tv_usec=time_in_us;
+                setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
+                printf("Value of timer is: %d\n",timeout.tv_usec);
+                
+            }
+            numseq_rtt=0;
+        }
+
         if(n == 0){
             nb_timeout++;
             ////printf("Timeout recu, envoi de la sequence entiere\n");
@@ -238,7 +238,7 @@ int main (int argc, char *argv[]) {
                 if(i==0){
                     ////printf("On lance le RTT calculation\n");
                     time_rtt = give_time();
-                    numseq_rtt = num_seq+i;
+                    numseq_rtt = num_seq;
                 }
                 ////printf("---> %d\n",num_seq+i);
                 if((num_seq+i == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
@@ -265,7 +265,7 @@ int main (int argc, char *argv[]) {
                         if((num_seq == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                             envoyer(num_seq,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         } else if((num_seq < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
-                            if((rand() % 10) == 1){
+                            if((rand() % 3) == 1){
                                 ////printf("On lance le RTT calculation\n");
                                 time_rtt = give_time();
                                 numseq_rtt=num_seq;
@@ -294,7 +294,7 @@ int main (int argc, char *argv[]) {
     buffer[n] = '\0';
     //printf("Final ack done for %d .\n",getpid());
     double time_taken = give_time() - time;
-    //printf("time taken %.6lf\n",time_taken);
+    printf("time taken %.6lf\n",time_taken);
     //printf("Taille: %ld\n", length);
     //printf("Temps: %f\n",time_taken);
     printf("%f\n",((float)((float)length/time_taken))/1000);
