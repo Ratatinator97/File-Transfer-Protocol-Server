@@ -10,12 +10,23 @@
 #include <arpa/inet.h>
 #include <time.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
 
 #define RCVSIZE 1500
 
-double give_time();
+double give_time(void);
 void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t length);
 int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length);
+void *thread_clock(void* arguments);
+
+struct arg_struct {
+    sem_t* arg1;
+    int* arg2;
+    int* arg3;
+    double* arg4;
+};
 
 int main (int argc, char *argv[]) {
 
@@ -176,7 +187,7 @@ int main (int argc, char *argv[]) {
     }
 
     //printf("Le fichier lu est decoupe en %d envois\n",nb_morceaux);
-
+    struct arg_struct args;
     int num_seq=1;
     int num_seq_ack=0;
     int taille_window=1;
@@ -187,6 +198,16 @@ int main (int argc, char *argv[]) {
     double time_in_us;
     int nb_timeout=0;
     int threshold=4096;
+
+    pthread_t thread1;
+    sem_t semaphore1;
+    sem_init(&semaphore1, 0, 1);
+    args.arg1=&semaphore1;
+    args.arg2=&taille_window;
+    args.arg3=&threshold;
+    args.arg4=&time_in_us;
+    int first_time=1;
+    
 
     //printf("Initialisation\n");
     for(int i=0;i< taille_window;i++){
@@ -219,22 +240,24 @@ int main (int argc, char *argv[]) {
             time_rtt = give_time() - time_rtt;
             //printf("Hard RTT time is : %f\n",time_rtt);
             if((time_rtt < 1000000)){
-
+                sem_wait(&semaphore1);
                 time_in_us = time_rtt*1000000;
                 //printf("RTT time %f\n",time_in_us);
                 time_in_us=time_in_us+2000;
+                sem_post(&semaphore1);
                 timeout.tv_usec=time_in_us;
                 setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
                 printf("Value of timer is: %d\n",timeout.tv_usec);
-                
             }
             numseq_rtt=0;
         }
 
         if(n == 0){
             nb_timeout++;
+            sem_wait(&semaphore1);
             taille_window=1;
             threshold=(num_seq-num_seq_ack)/2;
+            sem_post(&semaphore1);
             
             
             //Si Timeout alors : Refaire le RTT
@@ -258,9 +281,14 @@ int main (int argc, char *argv[]) {
             }
             num_seq += taille_window;
         } else {
-            
+            sem_wait(&semaphore1);
             if(taille_window >= threshold){
                 printf("On slow down mofow\n");
+                if(first_time==1){
+                    pthread_create(&thread1, NULL, thread_clock, (void *)&args);
+                    first_time=0;
+                }
+                
                 taille_window+= 1.0/taille_window;
                 //TODO Each RTT increase taille_window par 1
             } else {
@@ -272,6 +300,7 @@ int main (int argc, char *argv[]) {
                     taille_window+=n-num_seq_ack;
                 }
             }
+            sem_post(&semaphore1);
             num_seq_ack = n;
             ////printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
             for(int i=0; i < taille_window;i++){
@@ -370,9 +399,26 @@ int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
     return 0;
 }
 
-double give_time()
+double give_time(void)
 {
     struct timespec now;
     clock_gettime(CLOCK_REALTIME, &now);
     return now.tv_sec + now.tv_nsec*1e-9;
+}
+
+void *thread_clock(void* arguments) {
+    
+    struct arg_struct *args = arguments;
+    while(1){
+        sem_wait(args->arg1);
+        int* s_win = (args->arg2);
+        int thres=*(args->arg3);
+        double sleep_time=*(args->arg4);
+        if(*s_win >= thres){
+            *s_win+=1;
+        }
+        sem_post(args->arg1);
+        usleep(sleep_time);
+    }
+	pthread_exit(EXIT_SUCCESS);
 }
