@@ -18,7 +18,7 @@
 
 double give_time(void);
 void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t length);
-int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length);
+int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length, int* previous,int* nb_same);
 void *thread_clock(void* arguments);
 
 struct arg_struct {
@@ -198,7 +198,8 @@ int main (int argc, char *argv[]) {
     double time_in_us;
     int nb_timeout=0;
     int threshold=4096;
-
+    int previous_ack;
+    int nb_same_ack;
     pthread_t thread1;
     sem_t semaphore1;
     sem_init(&semaphore1, 0, 1);
@@ -227,8 +228,8 @@ int main (int argc, char *argv[]) {
 
 
     while(num_seq_ack < nb_morceaux){
-        printf("Taille de la fenetre: %d\n",taille_window);
-        int n = wait_ack(num_seq_ack,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len);
+        
+        int n = wait_ack(num_seq_ack,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len,&previous_ack,&nb_same_ack);
         
         printf("Nous avons recu %d\n",n);
         ////printf("Rentre dans le affichage de timer ? %d\n",(numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0));
@@ -243,7 +244,7 @@ int main (int argc, char *argv[]) {
                 sem_wait(&semaphore1);
                 time_in_us = time_rtt*1000000;
                 //printf("RTT time %f\n",time_in_us);
-                time_in_us=time_in_us+2000;
+                time_in_us=time_in_us+1500;
                 sem_post(&semaphore1);
                 timeout.tv_usec=time_in_us;
                 setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
@@ -258,7 +259,7 @@ int main (int argc, char *argv[]) {
             taille_window=1;
             threshold=(num_seq-num_seq_ack)/2;
             sem_post(&semaphore1);
-            
+            printf("Taille de la fenetre: %d\n",taille_window);
             
             //Si Timeout alors : Refaire le RTT
 
@@ -270,7 +271,7 @@ int main (int argc, char *argv[]) {
                     time_rtt = give_time();
                     numseq_rtt = num_seq;
                 }
-                //printf("---> %d\n",num_seq+i);
+                printf("---> %d\n",num_seq+i);
                 if((num_seq+i == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                     envoyer(num_seq+i,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 } else if((num_seq+i < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
@@ -283,7 +284,7 @@ int main (int argc, char *argv[]) {
         } else {
             sem_wait(&semaphore1);
             if(taille_window >= threshold){
-                printf("On slow down mofow\n");
+                //printf("On slow down mofow\n");
                 if(first_time==1){
                     pthread_create(&thread1, NULL, thread_clock, (void *)&args);
                     first_time=0;
@@ -296,12 +297,16 @@ int main (int argc, char *argv[]) {
                     
                     taille_window+=1;
                 } else {
-                    printf("On ajoute 1 par num de seq aquite\n");
+                    //printf("On ajoute 1 par num de seq aquite\n");
                     taille_window+=n-num_seq_ack;
                 }
             }
             sem_post(&semaphore1);
-            num_seq_ack = n;
+            if(n > num_seq_ack){
+                num_seq_ack = n;
+            }
+            
+            printf("Taille de la fenetre: %d\n",taille_window);
             ////printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
             for(int i=0; i < taille_window;i++){
 
@@ -321,7 +326,7 @@ int main (int argc, char *argv[]) {
                                 numseq_rtt=num_seq;
                             }
                             ////printf("numseq: %d, i: %d \n",num_seq,i);
-                            //printf("----------------> %d\n",num_seq);
+                            printf("----------------> %d\n",num_seq);
                             envoyer(num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         }
                     }
@@ -371,13 +376,28 @@ void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
     return;
 }
 
-int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length){
+int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length, int* previous,int* nb_same){
 
     int n = recvfrom(server_socket, (char *)buffer_input, RCVSIZE,MSG_WAITALL, (struct sockaddr *) client_addr,length);
     buffer_input[n] = '\0';
     if(n != -1){
-
+        
         int numack = atoi(strtok(buffer_input,"ACK_"));
+        
+        if(numack == *previous){
+            (*nb_same)++;
+            printf("We received %d, the previous was: %d and the number of chained same is : %d\n",numack,*previous,*nb_same);
+            if((*nb_same)==3){
+                printf("3 In a row, give a 0\n");
+                (*nb_same)=0;
+                return 0; //Mettre un identifier différent afin de reconnaitre pour fast retransmit
+                
+            }
+        } else {
+            (*nb_same)=0;
+        }
+        
+        *previous=numack;
         if(numack == no_seq){
             //printf("Ack == Numero de seq\n");
             return numack;
@@ -389,11 +409,8 @@ int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
         }
         else if(numack < no_seq){
             //printf("Already acknowledged !\n");
-            return no_seq;
+            return numack;
         }
-    }
-    else {
-        
     }
 
     return 0;
