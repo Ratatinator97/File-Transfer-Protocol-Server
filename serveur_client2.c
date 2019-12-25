@@ -15,7 +15,7 @@
 
 double give_time();
 void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t length);
-int wait_ack(int no_seq, int no_seq_max, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length);
+int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length);
 
 int main (int argc, char *argv[]) {
 
@@ -179,13 +179,14 @@ int main (int argc, char *argv[]) {
 
     int num_seq=1;
     int num_seq_ack=0;
-    int taille_window=8;
-    int window[taille_window];
+    int taille_window=1;
+    int window[4096];
     double time_rtt;
     int numseq_rtt;
     double time = give_time();
     double time_in_us;
     int nb_timeout=0;
+    int threshold=4096;
 
     //printf("Initialisation\n");
     for(int i=0;i< taille_window;i++){
@@ -205,9 +206,10 @@ int main (int argc, char *argv[]) {
 
 
     while(num_seq_ack < nb_morceaux){
-        int n = wait_ack(num_seq_ack,num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len);
+        printf("Taille de la fenetre: %d\n",taille_window);
+        int n = wait_ack(num_seq_ack,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len);
         
-        ////printf("Nous cherchons %d et avons recu %d\n",numseq_rtt,n);
+        printf("Nous avons recu %d\n",n);
         ////printf("Rentre dans le affichage de timer ? %d\n",(numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0));
         if((n > (numseq_rtt+taille_window))&&(n!=0)){
             numseq_rtt=0;
@@ -231,8 +233,13 @@ int main (int argc, char *argv[]) {
 
         if(n == 0){
             nb_timeout++;
-            ////printf("Timeout recu, envoi de la sequence entiere\n");
+            taille_window=1;
+            threshold=(num_seq-num_seq_ack)/2;
+            
+            
             //Si Timeout alors : Refaire le RTT
+
+            //Recaler la window
             num_seq = num_seq_ack+1;
             for(int i=0;i< taille_window;i++){
                 if(i==0){
@@ -240,7 +247,7 @@ int main (int argc, char *argv[]) {
                     time_rtt = give_time();
                     numseq_rtt = num_seq;
                 }
-                ////printf("---> %d\n",num_seq+i);
+                //printf("---> %d\n",num_seq+i);
                 if((num_seq+i == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                     envoyer(num_seq+i,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 } else if((num_seq+i < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
@@ -251,6 +258,20 @@ int main (int argc, char *argv[]) {
             }
             num_seq += taille_window;
         } else {
+            
+            if(taille_window >= threshold){
+                printf("On slow down mofow\n");
+                taille_window+= 1.0/taille_window;
+                //TODO Each RTT increase taille_window par 1
+            } else {
+                if(num_seq_ack==0){
+                    
+                    taille_window+=1;
+                } else {
+                    printf("On ajoute 1 par num de seq aquite\n");
+                    taille_window+=n-num_seq_ack;
+                }
+            }
             num_seq_ack = n;
             ////printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
             for(int i=0; i < taille_window;i++){
@@ -271,7 +292,7 @@ int main (int argc, char *argv[]) {
                                 numseq_rtt=num_seq;
                             }
                             ////printf("numseq: %d, i: %d \n",num_seq,i);
-                            ////printf("----------------> %d\n",num_seq);
+                            //printf("----------------> %d\n",num_seq);
                             envoyer(num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         }
                     }
@@ -321,7 +342,7 @@ void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
     return;
 }
 
-int wait_ack(int no_seq, int no_seq_max, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length){
+int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length){
 
     int n = recvfrom(server_socket, (char *)buffer_input, RCVSIZE,MSG_WAITALL, (struct sockaddr *) client_addr,length);
     buffer_input[n] = '\0';
@@ -333,7 +354,7 @@ int wait_ack(int no_seq, int no_seq_max, int no_bytes, char* buffer_input, char*
             return numack;
 
         }
-        else if((numack > no_seq) && (numack <= no_seq_max)){
+        else if((numack > no_seq)){
             //printf("Ack plus grand que le num de sequence : %d\n",numack);
             return numack;
         }
