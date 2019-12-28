@@ -41,17 +41,51 @@ int main (int argc, char *argv[]) {
 
     char buffer[RCVSIZE];
 
-    if(argc > 2){
+    if(argc > 7){
         //printf("Too many arguments\n");
         exit(0);
     }
-    if(argc < 2){
+    if(argc < 7){
         //printf("Argument expected\n");
         exit(0);
     }
-    if(argc == 2){
+    if(argc == 7){
         port_syn = atoi(argv[1]);
-        //printf("%d\n",port_syn);
+        
+        int rtt_enabled = atoi(argv[2]);
+        if(rtt_enabled < 0){
+            perror("RTT time can't be less than 0");
+            return -1;
+        }
+
+        int ss_enabled = atoi(argv[3]); // 0 disabled, 1 enabled, <0 fixed window
+        if(ss_enabled > 1){
+            perror(" Wrong value in arg Window Size");
+            return -1;
+        } else {
+            if(ss_enabled < 0){
+                int window_size=-ss_enabled;
+            }
+        }
+        
+        int ca_enabled = atoi(argv[4]); // 0 disabled, 1 enabled
+        if((ca_enabled!=0) && (ca_enabled!=1)){
+            perror(" Wrong value in arg CA");
+            return -1;
+        }
+        
+        int ftx_enabled = atoi(argv[5]); // 0 disabled, 1 enabled
+        if((ftx_enabled!=0) && (ftx_enabled!=1)){
+            perror(" Wrong value in arg Fast Retransmit");
+            return -1;
+        }
+        
+        int frecov_enabled = atoi(argv[6]); // 0 disabled, 1 enabled
+        if((frecov_enabled!=0) && (frecov_enabled!=1)){
+            perror(" Wrong value in arg Fast Recovery");
+            return -1;
+        }
+        printf("RTT time: %d, Slow-start: %d, Colision-Avoidance: %d, Fast-Retransmit: %d, Fast-Recovery: %d\n",ss_enabled,ca_enabled,ftx_enabled,frecov_enabled);
     }
 
 
@@ -186,28 +220,47 @@ int main (int argc, char *argv[]) {
         nb_morceaux = length/(RCVSIZE-6);
     }
 
-    //printf("Le fichier lu est decoupe en %d envois\n",nb_morceaux);
-    struct arg_struct args;
+    
+    // --- Differents parametres de la gestion de la taille de la fenetre
     int num_seq=1;
     int num_seq_ack=0;
     int taille_window=1;
     int window[4096];
+    int threshold=4096;
+    
+    // --- Differentes varaibles qui servent a l'estimation du RTT
     double time_rtt;
     int numseq_rtt;
-    double time = give_time();
     double time_in_us;
+    double avg_rtt=0;
+
+    // --- Varaible servant au calcul du debit final
+    double time = give_time();
+    
+    // --- Statistiques
     int nb_timeout=0;
-    int threshold=4096;
+    int nb_retransmit=0;
+    
+    // --- Sert au fast retransmit (Combien de ACKS d'affilee sont les memes)
     int previous_ack;
     int nb_same_ack;
+
+    // --- Sert au fast recovery (On force la CA après fast retransmit)
+    int forced_cavoidance=0;
+    
+    // --- Materiel necessaire a la CA (thread ET semaphore)
     pthread_t thread1;
     sem_t semaphore1;
     sem_init(&semaphore1, 0, 1);
+    
+    // --- Structure et arguments pour le thread CA + variable lancement thread
+    struct arg_struct args;
     args.arg1=&semaphore1;
     args.arg2=&taille_window;
     args.arg3=&threshold;
     args.arg4=&time_in_us;
     int first_time=1;
+    
     
 
     //printf("Initialisation\n");
@@ -243,47 +296,69 @@ int main (int argc, char *argv[]) {
             if((time_rtt < 1000000)){
                 sem_wait(&semaphore1);
                 time_in_us = time_rtt*1000000;
-                //printf("RTT time %f\n",time_in_us);
-                time_in_us=time_in_us+1500;
-                sem_post(&semaphore1);
+                
+                if(avg_rtt != 0){
+                    avg_rtt= (0.8*avg_rtt)+(0.2*time_in_us);
+                } else {
+                    avg_rtt+=time_in_us;
+                }
+                time_in_us=2*avg_rtt;
                 timeout.tv_usec=time_in_us;
+                sem_post(&semaphore1);
                 setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
                 printf("Value of timer is: %d\n",timeout.tv_usec);
             }
             numseq_rtt=0;
         }
 
-        if(n == 0){
-            nb_timeout++;
-            sem_wait(&semaphore1);
-            taille_window=1;
-            threshold=(num_seq-num_seq_ack)/2;
-            sem_post(&semaphore1);
-            printf("Taille de la fenetre: %d\n",taille_window);
+        if((n == 0) || (n==-1)){
+            if(n==0){
+                nb_timeout++;
+                sem_wait(&semaphore1);
+                taille_window=1;
+                threshold=(num_seq-num_seq_ack)/2;
+                sem_post(&semaphore1);
+            } else if(n==-1){
+                nb_retransmit++;
+                sem_wait(&semaphore1);
+                threshold=taille_window/2;
+                taille_window=threshold+3;
+                sem_post(&semaphore1);
+                forced_cavoidance=1;
+            }
+
+            
             
             //Si Timeout alors : Refaire le RTT
 
             //Recaler la window
-            num_seq = num_seq_ack+1;
-            for(int i=0;i< taille_window;i++){
+            num_seq = num_seq_ack;
+            sem_wait(&semaphore1);
+            int taille_window_copy=1;
+            sem_post(&semaphore1);
+            
+            for(int i=0;i< taille_window_copy;i++){
                 if(i==0){
                     ////printf("On lance le RTT calculation\n");
                     time_rtt = give_time();
                     numseq_rtt = num_seq;
                 }
-                printf("---> %d\n",num_seq+i);
+                
                 if((num_seq+i == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
-                    envoyer(num_seq+i,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
+                    printf("---> %d\n",num_seq+i+1);
+                    envoyer(num_seq+i+1,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 } else if((num_seq+i < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
-                    envoyer(num_seq+i,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
+                    printf("---> %d\n",num_seq+i+1);
+                    envoyer(num_seq+i+1,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 }
-                window[i]=num_seq+i;
+                window[i]=num_seq+i+1;
 
             }
-            num_seq += taille_window;
+            num_seq += taille_window_copy;
+            
         } else {
             sem_wait(&semaphore1);
-            if(taille_window >= threshold){
+            if((taille_window >= threshold)||(forced_cavoidance==1)){
                 //printf("On slow down mofow\n");
                 if(first_time==1){
                     pthread_create(&thread1, NULL, thread_clock, (void *)&args);
@@ -301,22 +376,21 @@ int main (int argc, char *argv[]) {
                     taille_window+=n-num_seq_ack;
                 }
             }
+            int taille_window_copy=taille_window;
             sem_post(&semaphore1);
             if(n > num_seq_ack){
                 num_seq_ack = n;
             }
             
-            printf("Taille de la fenetre: %d\n",taille_window);
             ////printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
-            for(int i=0; i < taille_window;i++){
+            for(int j=0;j<taille_window_copy;j++){
 
-                if(window[i] < (num_seq_ack+1+i)){
+                if(window[j] < (num_seq_ack+1+j)){
 
-                    window[i]=num_seq_ack+(i+1);
-
-                    if(window[i] > num_seq){
-
-                        num_seq=window[i];
+                    window[j]=num_seq_ack+(j+1);
+                    if(window[j] > num_seq){
+                        
+                        num_seq=window[j];
                         if((num_seq == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                             envoyer(num_seq,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         } else if((num_seq < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
@@ -353,7 +427,8 @@ int main (int argc, char *argv[]) {
     //printf("Taille: %ld\n", length);
     //printf("Temps: %f\n",time_taken);
     printf("%f\n",((float)((float)length/time_taken))/1000);
-    printf("Nb de timeouts%d\n",nb_timeout);
+    printf("Nb de timeouts %d\n",nb_timeout);
+    printf("Nb of retransmits %d\n",nb_retransmit);
 
     return 0;
 }
@@ -390,8 +465,7 @@ int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
             if((*nb_same)==3){
                 printf("3 In a row, give a 0\n");
                 (*nb_same)=0;
-                return 0; //Mettre un identifier différent afin de reconnaitre pour fast retransmit
-                
+                return -1; //Mettre un identifier différent afin de reconnaitre pour fast retransmit
             }
         } else {
             (*nb_same)=0;
