@@ -88,11 +88,8 @@ int main (int argc, char *argv[]) {
         printf("RTT time: %d, Slow-start: %d, Colision-Avoidance: %d, Fast-Retransmit: %d, Fast-Recovery: %d\n",ss_enabled,ca_enabled,ftx_enabled,frecov_enabled);
     }
 
-
-
     int server_desc_syn = socket(AF_INET, SOCK_DGRAM, 0);
     int server_desc_data = socket(AF_INET, SOCK_DGRAM, 0);
-
 
     if(server_desc_syn < 0){
         perror("Cannot create udp socket\n");
@@ -103,13 +100,11 @@ int main (int argc, char *argv[]) {
     adresse.sin_port= htons(port_syn);
     adresse.sin_addr.s_addr= INADDR_ANY;
 
-
     int newport = 1;
     port_data =  port_syn+newport;
     adresse2.sin_family= AF_INET;
     adresse2.sin_port= htons(port_data);
     adresse2.sin_addr.s_addr= INADDR_ANY;
-
 
     if (bind(server_desc_syn, (struct sockaddr*) &adresse, sizeof(adresse))<0) {
         perror("Bind failed\n");
@@ -117,77 +112,71 @@ int main (int argc, char *argv[]) {
         return -1;
     }
 
-
     socklen_t len = sizeof(cliaddr);
     int n;
 
     while(getpid() == ppid){
-
-
-      //printf("JE SUIS LE PERE - %d\n",getpid());
-      //printf("WAITING FOR SYN\n");
-      n = recvfrom(server_desc_syn, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
-      buffer[n] = '\0';
-
-      if(strcmp(buffer,"SYN")==0){
-
-        char synack[13];
-        char port_data_s[6];
-        strcpy(synack, "SYN-ACK");
-        //printf("SYN COMING\n");
-        snprintf((char *) port_data_s, 10 , "%d", port_data );
-        strcat(synack,port_data_s);
-        strcpy(buffer, synack);
-
-        sendto(server_desc_syn, (char *)buffer, strlen(buffer),MSG_CONFIRM, (const struct sockaddr *) &cliaddr, len);
-        //printf("Waiting for ACK...\n");
+        //printf("JE SUIS LE PERE - %d\n",getpid());
+        //printf("WAITING FOR SYN\n");
         n = recvfrom(server_desc_syn, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
         buffer[n] = '\0';
-        if(strcmp(buffer,"ACK")==0){
-            //printf("ACK received, connection\n");
-        // Handshake reussi !
-        }else{
-            //printf("Bad ack");
+
+        if(strcmp(buffer,"SYN")==0){
+
+            char synack[13];
+            char port_data_s[6];
+            strcpy(synack, "SYN-ACK");
+            //printf("SYN COMING\n");
+            snprintf((char *) port_data_s, 10 , "%d", port_data );
+            strcat(synack,port_data_s);
+            strcpy(buffer, synack);
+
+            sendto(server_desc_syn, (char *)buffer, strlen(buffer),MSG_CONFIRM, (const struct sockaddr *) &cliaddr, len);
+            //printf("Waiting for ACK...\n");
+            n = recvfrom(server_desc_syn, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
+            buffer[n] = '\0';
+            if(strcmp(buffer,"ACK")==0){
+                //printf("ACK received, connection\n");
+            // Handshake reussi !
+            } else{
+                //printf("Bad ack");
+                exit(0);
+            }
+        } else{
+            //printf("bad SYN");
             exit(0);
         }
-    }else{
-        //printf("bad SYN");
-        exit(0);
+
+        if (bind(server_desc_data, (struct sockaddr*) &adresse2, sizeof(adresse2))<0) {
+            
+            perror("Bind failed\n");
+            exit(0);
+        }
+
+        pid_t testf = fork();
+
+        if(testf == 0){
+
+            close(server_desc_syn);
+
+        } else{
+
+            close(server_desc_data);
+            server_desc_data = socket(AF_INET, SOCK_DGRAM, 0);
+            port_data ++;
+            adresse2.sin_port= htons(port_data);
+            
+        }
     }
-
-    if (bind(server_desc_data, (struct sockaddr*) &adresse2, sizeof(adresse2))<0) {
-      perror("Bind failed\n");
-      exit(0);
-    }
-
-    pid_t testf = fork();
-
-    if(testf == 0){
-      close(server_desc_syn);
-    }else{
-    close(server_desc_data);
-    server_desc_data = socket(AF_INET, SOCK_DGRAM, 0);
-    port_data ++;
-    //printf("port du prochain: %d\n",port_data);
-    //printf("\n");
-    adresse2.sin_port= htons(port_data);
-  }
-}
-    //printf("JE SUIS LE FILS - %d DU PERE  %d\n\n",getpid(),getppid());
     FILE* fichier;
 
     timeout.tv_sec=0;
-    timeout.tv_usec=100000;
+    timeout.tv_usec=50000;
     
     setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
-    //printf("Valeur du timeout initial : %f\n",timeout.tv_usec);
-    //printf("WAITING FOR MESSAGE\n");
 
     n = recvfrom(server_desc_data, (char *)buffer, RCVSIZE,MSG_WAITALL, ( struct sockaddr *) &cliaddr, &len);
     buffer[n] = '\0';
-
-    //printf("On a recu le msg : %s ...\n", buffer);
-    // POSER UN ACK ICI
 
     fichier = NULL;
 
@@ -207,12 +196,8 @@ int main (int argc, char *argv[]) {
     }
     fclose(fichier);
 
-    //printf("Le fichier lu a une taille de %ld octets\n",length);
-
     int nb_morceaux;
     int reste = length % (RCVSIZE-6);
-
-    //printf("Le reste est egal a %d\n",reste);
 
     if((length % (RCVSIZE-6)) != 0){
         nb_morceaux = (length/(RCVSIZE-6))+1;
@@ -220,7 +205,6 @@ int main (int argc, char *argv[]) {
         nb_morceaux = length/(RCVSIZE-6);
     }
 
-    
     // --- Differents parametres de la gestion de la taille de la fenetre
     int num_seq=1;
     int num_seq_ack=0;
@@ -261,8 +245,6 @@ int main (int argc, char *argv[]) {
     args.arg4=&time_in_us;
     int first_time=1;
     
-    
-
     //printf("Initialisation\n");
     for(int i=0;i< taille_window;i++){
         if(i==0){
@@ -277,8 +259,8 @@ int main (int argc, char *argv[]) {
         }
         window[i]=i+1;
     }
-    num_seq=taille_window;
 
+    num_seq=taille_window;
 
     while(num_seq_ack < nb_morceaux){
         
@@ -326,10 +308,6 @@ int main (int argc, char *argv[]) {
                 sem_post(&semaphore1);
                 forced_cavoidance=1;
             }
-
-            
-            
-            //Si Timeout alors : Refaire le RTT
 
             //Recaler la window
             num_seq = num_seq_ack;
@@ -382,7 +360,6 @@ int main (int argc, char *argv[]) {
                 num_seq_ack = n;
             }
             
-            ////printf("1----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
             for(int j=0;j<taille_window_copy;j++){
 
                 if(window[j] < (num_seq_ack+1+j)){
@@ -399,18 +376,13 @@ int main (int argc, char *argv[]) {
                                 time_rtt = give_time();
                                 numseq_rtt=num_seq;
                             }
-                            ////printf("numseq: %d, i: %d \n",num_seq,i);
                             printf("----------------> %d\n",num_seq);
                             envoyer(num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         }
                     }
                 }
             }
-            ////printf("2----- Window: %d %d %d %d\n",window[0],window[1],window[2],window[3]);
-
-            //envoyer(num_seq_ack+1,reste,&buffer_lecture,&buffer,server_desc_data,&cliaddr,len);
         }
-
     }
 
     // ToDo retransmission si pas ack
@@ -418,7 +390,6 @@ int main (int argc, char *argv[]) {
         sendto(server_desc_data,"FIN", strlen("FIN"),MSG_CONFIRM, (const struct sockaddr *) &cliaddr,len);
     }
     
-    ////printf("WAITING for final ack\n");
     n = recvfrom(server_desc_data, (char *)buffer, RCVSIZE,MSG_WAITALL, (struct sockaddr *) &cliaddr,&len);
     buffer[n] = '\0';
     //printf("Final ack done for %d .\n",getpid());
