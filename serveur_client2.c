@@ -41,51 +41,19 @@ int main (int argc, char *argv[]) {
 
     char buffer[RCVSIZE];
 
-    if(argc > 7){
+    if(argc > 2){
         //printf("Too many arguments\n");
         exit(0);
     }
-    if(argc < 7){
+    if(argc < 2){
         //printf("Argument expected\n");
         exit(0);
     }
-    if(argc == 7){
+    if(argc == 2){
         port_syn = atoi(argv[1]);
         
-        int rtt_enabled = atoi(argv[2]);
-        if(rtt_enabled < 0){
-            perror("RTT time can't be less than 0");
-            return -1;
-        }
-
-        int ss_enabled = atoi(argv[3]); // 0 disabled, 1 enabled, <0 fixed window
-        if(ss_enabled > 1){
-            perror(" Wrong value in arg Window Size");
-            return -1;
-        } else {
-            if(ss_enabled < 0){
-                int window_size=-ss_enabled;
-            }
-        }
+   
         
-        int ca_enabled = atoi(argv[4]); // 0 disabled, 1 enabled
-        if((ca_enabled!=0) && (ca_enabled!=1)){
-            perror(" Wrong value in arg CA");
-            return -1;
-        }
-        
-        int ftx_enabled = atoi(argv[5]); // 0 disabled, 1 enabled
-        if((ftx_enabled!=0) && (ftx_enabled!=1)){
-            perror(" Wrong value in arg Fast Retransmit");
-            return -1;
-        }
-        
-        int frecov_enabled = atoi(argv[6]); // 0 disabled, 1 enabled
-        if((frecov_enabled!=0) && (frecov_enabled!=1)){
-            perror(" Wrong value in arg Fast Recovery");
-            return -1;
-        }
-        printf("RTT time: %d, Slow-start: %d, Colision-Avoidance: %d, Fast-Retransmit: %d, Fast-Recovery: %d\n",ss_enabled,ca_enabled,ftx_enabled,frecov_enabled);
     }
 
     int server_desc_syn = socket(AF_INET, SOCK_DGRAM, 0);
@@ -181,7 +149,7 @@ int main (int argc, char *argv[]) {
     fichier = NULL;
 
     if((fichier=fopen(buffer,"r"))==NULL){
-        //printf("Something's wrong I can feel it (file)\n");
+        printf("Something's wrong I can feel it (file)\n");
         exit(1);
     }
 
@@ -189,10 +157,13 @@ int main (int argc, char *argv[]) {
     fseek(fichier, 0, SEEK_END);    // Go to end
     size_t length = ftell(fichier); // read the position which is the size
     fseek(fichier, pos, SEEK_SET);
+
+    printf("Avant\n");
     char buffer_lecture[length];
+    printf("Apres\n");
 
     if((fread(buffer_lecture,sizeof(char),length,fichier))!=length){
-        //printf("Something's wrong I can feel it (read)....\n");
+        printf("Something's wrong I can feel it (read)....\n");
     }
     fclose(fichier);
 
@@ -265,10 +236,13 @@ int main (int argc, char *argv[]) {
     while(num_seq_ack < nb_morceaux){
         
         int n = wait_ack(num_seq_ack,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len,&previous_ack,&nb_same_ack);
-        
+        sem_wait(&semaphore1);
+        int taille_window_copy=taille_window;
+        sem_post(&semaphore1);
         printf("Nous avons recu %d\n",n);
+        printf("Taille de fenetre : %d\n",taille_window_copy);
         ////printf("Rentre dans le affichage de timer ? %d\n",(numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0));
-        if((n > (numseq_rtt+taille_window))&&(n!=0)){
+        if((n > (numseq_rtt+taille_window_copy))&&(n!=0)){
             numseq_rtt=0;
         }
         if((numseq_rtt == n)&&(n!=0)&&(numseq_rtt != 0)){
@@ -339,6 +313,7 @@ int main (int argc, char *argv[]) {
             if((taille_window >= threshold)||(forced_cavoidance==1)){
                 //printf("On slow down mofow\n");
                 if(first_time==1){
+                    printf("Lancement du thread\n");
                     pthread_create(&thread1, NULL, thread_clock, (void *)&args);
                     first_time=0;
                 }
@@ -350,8 +325,13 @@ int main (int argc, char *argv[]) {
                     
                     taille_window+=1;
                 } else {
-                    //printf("On ajoute 1 par num de seq aquite\n");
-                    taille_window+=n-num_seq_ack;
+                    printf("On ajoute 1 par num de seq aquite\n");
+                    printf("Taille fenetre1 %d\n",taille_window);
+                    if((n-num_seq_ack)>=1){
+                        taille_window+=n-num_seq_ack;
+                    } 
+                    
+                    printf("Taille fenetre2 %d\n",taille_window);
                 }
             }
             int taille_window_copy=taille_window;
@@ -471,6 +451,7 @@ double give_time(void)
 void *thread_clock(void* arguments) {
     
     struct arg_struct *args = arguments;
+    int nb_ajouts=0;
     while(1){
         sem_wait(args->arg1);
         int* s_win = (args->arg2);
@@ -481,6 +462,8 @@ void *thread_clock(void* arguments) {
         }
         sem_post(args->arg1);
         usleep(sleep_time);
+        nb_ajouts++;
+        printf("Ajout : %d\n",nb_ajouts);
     }
 	pthread_exit(EXIT_SUCCESS);
 }
