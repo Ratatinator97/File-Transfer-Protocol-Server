@@ -21,6 +21,8 @@ void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
 int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length, int* previous,int* nb_same);
 void *thread_clock(void* arguments);
 
+char buffer_lecture[5000000000];
+
 struct arg_struct {
     sem_t* arg1;
     int* arg2;
@@ -159,10 +161,11 @@ int main (int argc, char *argv[]) {
     fseek(fichier, pos, SEEK_SET);
 
     printf("Avant\n");
-    char buffer_lecture[length];
+    
     printf("Apres\n");
+    bzero(buffer_lecture, length);
 
-    if((fread(buffer_lecture,sizeof(char),length,fichier))!=length){
+    if((fread(&buffer_lecture,sizeof(char),length,fichier))!=length){
         printf("Something's wrong I can feel it (read)....\n");
     }
     fclose(fichier);
