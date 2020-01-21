@@ -466,7 +466,7 @@ void *thread_clock(void* arguments) {
         sem_post(args->arg1);
         usleep(sleep_time);
         nb_ajouts++;
-        printf("Ajout : %d\n",nb_ajouts);
+        
     }
 	pthread_exit(EXIT_SUCCESS);
 }
