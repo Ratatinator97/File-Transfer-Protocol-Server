@@ -159,11 +159,8 @@ int main (int argc, char *argv[]) {
     size_t length = ftell(fichier); // read the position which is the size
     fseek(fichier, pos, SEEK_SET);
 
-    printf("Avant\n");
     char* buffer_lecture = (char*)malloc(length * sizeof(char));
-    printf("Apres\n");
     
-
     if((fread(buffer_lecture,sizeof(char),length,fichier))!=length){
         printf("Something's wrong I can feel it (read)....\n");
     }
@@ -241,8 +238,6 @@ int main (int argc, char *argv[]) {
         sem_wait(&semaphore1);
         int taille_window_copy=taille_window;
         sem_post(&semaphore1);
-        printf("Nous avons recu %d\n",n);
-        printf("Taille de fenetre : %d\n",taille_window_copy);
         ////printf("Rentre dans le affichage de timer ? %d\n",(numseq_rtt <= n)&&(n!=0)&&(numseq_rtt != 0));
         if((n > (numseq_rtt+taille_window_copy))&&(n!=0)){
             numseq_rtt=0;
@@ -264,7 +259,7 @@ int main (int argc, char *argv[]) {
                 timeout.tv_usec=time_in_us;
                 sem_post(&semaphore1);
                 setsockopt(server_desc_data,SOL_SOCKET,SO_RCVTIMEO,(char*)&timeout,sizeof(struct timeval));
-                printf("Value of timer is: %d\n",timeout.tv_usec);
+                
             }
             numseq_rtt=0;
         }
@@ -299,10 +294,8 @@ int main (int argc, char *argv[]) {
                 }
                 
                 if((num_seq+i == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
-                    printf("---> %d\n",num_seq+i+1);
                     envoyer(num_seq+i+1,reste,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 } else if((num_seq+i < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
-                    printf("---> %d\n",num_seq+i+1);
                     envoyer(num_seq+i+1,RCVSIZE-6,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 }
                 window[i]=num_seq+i+1;
@@ -315,7 +308,7 @@ int main (int argc, char *argv[]) {
             if((taille_window >= threshold)||(forced_cavoidance==1)){
                 //printf("On slow down mofow\n");
                 if(first_time==1){
-                    printf("Lancement du thread\n");
+                    
                     pthread_create(&thread1, NULL, thread_clock, (void *)&args);
                     first_time=0;
                 }
@@ -327,13 +320,13 @@ int main (int argc, char *argv[]) {
                     
                     taille_window+=1;
                 } else {
-                    printf("On ajoute 1 par num de seq aquite\n");
-                    printf("Taille fenetre1 %d\n",taille_window);
+                    
+                    
                     if((n-num_seq_ack)>=1){
                         taille_window+=n-num_seq_ack;
                     } 
                     
-                    printf("Taille fenetre2 %d\n",taille_window);
+                   
                 }
             }
             int taille_window_copy=taille_window;
@@ -358,7 +351,6 @@ int main (int argc, char *argv[]) {
                                 time_rtt = give_time();
                                 numseq_rtt=num_seq;
                             }
-                            printf("----------------> %d\n",num_seq);
                             envoyer(num_seq,RCVSIZE-6,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         }
                     }
@@ -414,9 +406,7 @@ int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
         
         if(numack == *previous){
             (*nb_same)++;
-            printf("We received %d, the previous was: %d and the number of chained same is : %d\n",numack,*previous,*nb_same);
             if((*nb_same)==3){
-                printf("3 In a row, give a 0\n");
                 (*nb_same)=0;
                 return -1; //Mettre un identifier différent afin de reconnaitre pour fast retransmit
             }
