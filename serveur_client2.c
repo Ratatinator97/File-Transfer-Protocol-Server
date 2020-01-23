@@ -21,7 +21,6 @@ void envoyer(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, 
 int wait_ack(int no_seq, int no_bytes, char* buffer_input, char* buffer_output, int server_socket, struct sockaddr_in* client_addr, socklen_t* length, int* previous,int* nb_same);
 void *thread_clock(void* arguments);
 
-char buffer_lecture[5000000000];
 
 struct arg_struct {
     sem_t* arg1;
@@ -161,11 +160,11 @@ int main (int argc, char *argv[]) {
     fseek(fichier, pos, SEEK_SET);
 
     printf("Avant\n");
-    
+    char* buffer_lecture = (char*)malloc(length * sizeof(char));
     printf("Apres\n");
-    bzero(buffer_lecture, length);
+    
 
-    if((fread(&buffer_lecture,sizeof(char),length,fichier))!=length){
+    if((fread(buffer_lecture,sizeof(char),length,fichier))!=length){
         printf("Something's wrong I can feel it (read)....\n");
     }
     fclose(fichier);
@@ -227,9 +226,9 @@ int main (int argc, char *argv[]) {
             numseq_rtt = i+1;
         }
         if(num_seq == nb_morceaux){
-            envoyer(num_seq+i,reste,(char*)&buffer_lecture,(char *)&buffer,server_desc_data,&cliaddr,len);
+            envoyer(num_seq+i,reste,(char*)buffer_lecture,(char *)&buffer,server_desc_data,&cliaddr,len);
         } else {
-            envoyer(num_seq+i,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
+            envoyer(num_seq+i,RCVSIZE-6,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
         }
         window[i]=i+1;
     }
@@ -238,7 +237,7 @@ int main (int argc, char *argv[]) {
 
     while(num_seq_ack < nb_morceaux){
         
-        int n = wait_ack(num_seq_ack,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len,&previous_ack,&nb_same_ack);
+        int n = wait_ack(num_seq_ack,RCVSIZE-6,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,&len,&previous_ack,&nb_same_ack);
         sem_wait(&semaphore1);
         int taille_window_copy=taille_window;
         sem_post(&semaphore1);
@@ -301,10 +300,10 @@ int main (int argc, char *argv[]) {
                 
                 if((num_seq+i == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                     printf("---> %d\n",num_seq+i+1);
-                    envoyer(num_seq+i+1,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
+                    envoyer(num_seq+i+1,reste,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 } else if((num_seq+i < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                     printf("---> %d\n",num_seq+i+1);
-                    envoyer(num_seq+i+1,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
+                    envoyer(num_seq+i+1,RCVSIZE-6,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                 }
                 window[i]=num_seq+i+1;
 
@@ -352,7 +351,7 @@ int main (int argc, char *argv[]) {
                         
                         num_seq=window[j];
                         if((num_seq == nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
-                            envoyer(num_seq,reste,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
+                            envoyer(num_seq,reste,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         } else if((num_seq < nb_morceaux)&&(num_seq_ack <= nb_morceaux)){
                             if((rand() % 3) == 1){
                                 ////printf("On lance le RTT calculation\n");
@@ -360,7 +359,7 @@ int main (int argc, char *argv[]) {
                                 numseq_rtt=num_seq;
                             }
                             printf("----------------> %d\n",num_seq);
-                            envoyer(num_seq,RCVSIZE-6,(char*)&buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
+                            envoyer(num_seq,RCVSIZE-6,(char*)buffer_lecture,(char*)&buffer,server_desc_data,&cliaddr,len);
                         }
                     }
                 }
