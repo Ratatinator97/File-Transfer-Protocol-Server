@@ -374,7 +374,7 @@ int main (int argc, char *argv[]) {
     printf("%f\n",((float)((float)length/time_taken))/1000);
     printf("Nb de timeouts %d\n",nb_timeout);
     printf("Nb of retransmits %d\n",nb_retransmit);
-
+    free(buffer_lecture);
     return 0;
 }
 
