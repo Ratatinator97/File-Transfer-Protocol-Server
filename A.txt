@@ -1,3 +1,0 @@
-Ceci est un texte qu'il faut remplir
-pour tester les differents fichiers
-du projet de PRS 2019 avec Alexandros

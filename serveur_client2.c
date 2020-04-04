@@ -153,7 +153,7 @@ int main (int argc, char *argv[]) {
         printf("Something's wrong I can feel it (file)\n");
         exit(1);
     }
-
+    int small_size;
     size_t pos = ftell(fichier);    // Current position
     fseek(fichier, 0, SEEK_END);    // Go to end
     size_t length = ftell(fichier); // read the position which is the size
@@ -174,6 +174,9 @@ int main (int argc, char *argv[]) {
     } else {
         nb_morceaux = length/(RCVSIZE-6);
     }
+    if(length < 10000000){
+        small_size = 1;
+    }
 
     // --- Differents parametres de la gestion de la taille de la fenetre
     int num_seq=1;
@@ -181,6 +184,7 @@ int main (int argc, char *argv[]) {
     int taille_window=1;
     int window[4096];
     int threshold=4096;
+    
     
     // --- Differentes varaibles qui servent a l'estimation du RTT
     double time_rtt;
@@ -249,7 +253,6 @@ int main (int argc, char *argv[]) {
             if((time_rtt < 1000000)){
                 sem_wait(&semaphore1);
                 time_in_us = time_rtt*1000000;
-                
                 if(avg_rtt != 0){
                     avg_rtt= (0.8*avg_rtt)+(0.2*time_in_us);
                 } else {
@@ -265,19 +268,21 @@ int main (int argc, char *argv[]) {
         }
 
         if((n == 0) || (n==-1)){
-            if(n==0){
+            if((n==0)&&(small_size != 1)){
                 nb_timeout++;
                 sem_wait(&semaphore1);
                 taille_window=1;
                 threshold=(num_seq-num_seq_ack)/2;
                 sem_post(&semaphore1);
-            } else if(n==-1){
+            } else if((n==-1)&&(small_size!=1)){
                 nb_retransmit++;
                 sem_wait(&semaphore1);
                 threshold=taille_window/2;
                 taille_window=threshold+3;
                 sem_post(&semaphore1);
                 forced_cavoidance=1;
+            } else if(small_size == 1){
+                // Do nothing
             }
 
             //Recaler la window
@@ -321,12 +326,9 @@ int main (int argc, char *argv[]) {
                     taille_window+=1;
                 } else {
                     
-                    
                     if((n-num_seq_ack)>=1){
                         taille_window+=n-num_seq_ack;
                     } 
-                    
-                   
                 }
             }
             int taille_window_copy=taille_window;
